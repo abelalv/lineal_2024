@@ -171,6 +171,7 @@ $$
 AI = IA = A
 $$
 ---
+
 ### Definición de Matriz Inversa
 
 La **matriz inversa** de una matriz cuadrada $A$, denotada como $A^{-1}$, es aquella que, cuando se multiplica por $A$, resulta en la matriz identidad $I$. Esto se expresa como:
@@ -214,6 +215,7 @@ $$
 
 
 ---
+
 ### Combinaciones lineales
 
 Una combinación lineal de un conjunto de vectores $\{v_1, v_2, \ldots, v_n\}$ es una expresión de la forma:
