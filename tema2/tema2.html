@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="primera_Clase_files/libs/clipboard/clipboard.min.js"></script>
-<script src="primera_Clase_files/libs/quarto-html/tabby.min.js"></script>
-<script src="primera_Clase_files/libs/quarto-html/popper.min.js"></script>
-<script src="primera_Clase_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="primera_Clase_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="primera_Clase_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="primera_Clase_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="primera_Clase_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="tema2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="tema2_files/libs/quarto-html/tabby.min.js"></script>
+<script src="tema2_files/libs/quarto-html/popper.min.js"></script>
+<script src="tema2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="tema2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="tema2_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="tema2_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="tema2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.55">
 
-  <title>Primera Clase de Álgebra Lineal</title>
+  <title>Determinantes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="primera_Clase_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="primera_Clase_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="tema2_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="tema2_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="primera_Clase_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="primera_Clase_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="primera_Clase_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="primera_Clase_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="primera_Clase_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="tema2_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="tema2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="tema2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="tema2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="tema2_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Primera Clase de Álgebra Lineal</h1>
+  <h1 class="title">Determinantes</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -333,357 +333,104 @@
 </section>
 <section class="slide level2">
 
-<h3 id="aplicaciones-de-las-matrices">Aplicaciones de las Matrices</h3>
+<p>El determinante para una matriz cuadrada <span class="math inline">\(2\times 2\)</span> es:</p>
+<p><span class="math display">\[ det(A) = \begin{vmatrix} a &amp; b  \\ c &amp; d \end{vmatrix} = ad-bc \]</span></p>
+<p>Para una matriz cuadrada <span class="math inline">\(3\times 3\)</span> es:</p>
+<p><span class="math display">\[ det(A) = \begin{vmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \\ \color{red}{a} &amp; \color{red}{b} &amp; \color{red}{c} \\\color{red}{d}&amp;\color{red}{e}&amp;\color{red}{f}\end{vmatrix} = aei+bfg+cdh-ceg-bdi-afh \]</span></p>
+</section>
+<section class="slide level2">
+
+<p>De forma general el determinante de una matriz cuadrada <span class="math inline">\(n\times n\)</span> es:</p>
+<p><span class="math display">\[ det(A) = \begin{vmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{vmatrix} = \sum_{\sigma} (-1)^{\sigma} a_{1\sigma(1)}a_{2\sigma(2)}\cdots a_{n\sigma(n)} \]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Las propiedades de los determinantes son las siguientes:</p>
+<ol type="1">
+<li>Si una fila o columna de un determinante es nula, entonces el determinante es nulo.</li>
+<li>Si intercambio dos filas o dos columnas de un determinante, el determinante cambia de signo.</li>
+<li><span class="math inline">\(det(\alpha A)=\alpha^n det(A)\)</span>.</li>
+<li><span class="math inline">\(det(A^T) = det(A)\)</span>.</li>
+<li><span class="math inline">\(det(A \cdot B) = det(A) \cdot det(B)\)</span>.</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<ol start="6" type="1">
+<li><span class="math inline">\(\begin{vmatrix} a &amp; b  \\ c+f &amp; d+g \end{vmatrix} =\begin{vmatrix} a &amp; b  \\ c &amp; d \end{vmatrix}+\begin{vmatrix} a &amp; b  \\ f &amp; g \end{vmatrix}\)</span>.</li>
+<li><span class="math inline">\(det(AB)=det(A)det(B)\)</span>.</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<p>Note que si multiplico un fila por un escalar y la sumo a otra fila el determinante no cambia.</p>
 <ul>
-<li><p><strong>Aplicaciones de las Matrices</strong></p></li>
-<li><p><strong>Ingeniería</strong>: Usadas para el análisis de estructuras, sistemas de control y simulaciones.</p></li>
-<li><p><strong>Ciencias de la Computación</strong>: Algoritmos gráficos, procesamiento de imágenes, y redes neuronales.</p></li>
-<li><p><strong>Economía</strong>: Modelos de análisis económico, optimización de recursos y análisis de riesgos.</p></li>
-<li><p><strong>Física</strong>: Representación de ecuaciones en dinámica y mecánica cuántica.</p></li>
+<li>Si <span class="math inline">\(A\)</span> es una matriz triangular superior, ¿Cuál es el determinante de <span class="math inline">\(A\)</span>?</li>
 </ul>
 </section>
-<section class="slide level2">
-
-
-<img data-src="figures/figuralineal.jpg" class="r-stretch quarto-figure-center"><p class="caption">Aplicaciones de Matrices</p></section>
-<section class="slide level2">
-
-<h3 id="diapositiva-4-aplicaciones-avanzadas-de-las-matrices">Diapositiva 4: Aplicaciones Avanzadas de las Matrices</h3>
-<p><strong>Aplicaciones Avanzadas de las Matrices</strong></p>
-<ul>
-<li><strong>Redes Sociales</strong>: Utilizadas para el análisis de conexiones entre usuarios y recomendaciones de amistades.</li>
-<li><strong>Procesamiento de Señales</strong>: Aplicadas en la compresión de audio y video, filtrado de señales y reconocimiento de voz.</li>
-<li><strong>Aprendizaje Automático</strong>: Matrices son fundamentales en algoritmos de aprendizaje automático como la regresión lineal y las redes neuronales.</li>
-<li><strong>Criptografía</strong>: Matrices se utilizan en algoritmos de cifrado y descifrado para garantizar la seguridad de la información.</li>
-</ul>
+<section id="desarrollo-por-cofactores" class="slide level2">
+<h2>Desarrollo por cofactores</h2>
+<p>Para calcular el determinante de una matriz <span class="math inline">\(A\)</span> de <span class="math inline">\(n\times n\)</span> se puede hacer por cofactores.</p>
+<ol type="1">
+<li>Se elige una fila o columna de la matriz.</li>
+<li>Se calcula el determinante de la matriz que queda al eliminar la fila y columna seleccionada.</li>
+<li>Se multiplica el determinante por el elemento de la fila o columna seleccionada y se multiplica por <span class="math inline">\((-1)^{i+j}\)</span> donde <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span> son los índices de la fila y columna seleccionada.</li>
+</ol>
 </section>
 <section class="slide level2">
 
-
-<img data-src="figures/grafo.png" class="r-stretch quarto-figure-center"><p class="caption">Aplicaciones Avanzadas de Matrices</p></section>
-<section class="slide level2">
-
-<h3 id="nomenclatura-y-definición-de-matrices">Nomenclatura y Definición de Matrices</h3>
-<p><strong>Nomenclatura y Dimensiones de las Matrices</strong></p>
-<ul>
-<li><strong>Matriz</strong>: Un arreglo rectangular de números dispuestos en filas y columnas.</li>
-<li><strong>Elementos de una matriz</strong>: <span class="math inline">\(a_{ij}\)</span> representa el elemento en la i-ésima fila y j-ésima columna.</li>
-<li><strong>Dimensiones de una matriz</strong>: Si una matriz tiene m filas y n columnas, se describe como una matriz de <span class="math inline">\(m \times n\)</span>.</li>
-</ul>
+<p>Por ejemplo, para la matriz <span class="math inline">\(A\)</span> de <span class="math inline">\(3\times 3\)</span>: <span class="math display">\[|A|=\begin{vmatrix}
+3&amp;-1&amp;2\\
+4&amp;5&amp;6\\
+7&amp;1&amp;2
+\end{vmatrix}\]</span></p>
+<p>Así los menores son: <span class="math display">\[M_{11}=\begin{vmatrix}
+5&amp;6\\
+1&amp;2
+\end{vmatrix},\quad M_{12}=\begin{vmatrix}
+4&amp;6\\
+7&amp;2
+\end{vmatrix},\quad M_{13}=\begin{vmatrix}
+4&amp;5\\
+7&amp;1
+\end{vmatrix}\]</span></p>
+<p>Y el determinante es:</p>
+<p><span class="math display">\[|A|=\color{red}{(-1)^{1+1}}3\cdot M_{11}+\color{red}{(-1)^{1+2}}(-1)\cdot 4\cdot M_{12}+\color{red}{(-1)^{1+3}}2\cdot M_{13}\]</span></p>
+</section>
+<section id="inversa-de-una-matriz" class="slide level2">
+<h2>inversa de una matriz</h2>
+<p>La inversa de una matriz <span class="math inline">\(A\)</span> es una matriz <span class="math inline">\(A^{-1}\)</span> tal que:</p>
+<p><span class="math display">\[A\cdot A^{-1} = A^{-1}\cdot A = I\]</span></p>
+<p>Donde <span class="math inline">\(I\)</span> es la matriz identidad.</p>
+<p>Se puede calcular con la fórmula:</p>
+<p><span class="math display">\[A^{-1} = \frac{1}{det(A)}\cdot adj(A)\]</span></p>
+<p>Donde <span class="math inline">\(adj(A)\)</span> es la matriz adjunta de <span class="math inline">\(A\)</span>.</p>
 </section>
 <section class="slide level2">
 
-<p><strong>Ejemplo de Matriz</strong>: <span class="math display">\[ A = \begin{bmatrix}
-1 &amp; 2 &amp; 3 \\
-4 &amp; 5 &amp; 6
-\end{bmatrix} \]</span> Esta es una matriz de <span class="math inline">\(2    \times 3\)</span>.</p>
+<p>La matriz adjunta de <span class="math inline">\(A\)</span> se calcula de la siguiente forma:</p>
+<ol type="1">
+<li>Se calcula la matriz de cofactores</li>
+</ol>
+</section>
+<section id="regla-de-cramer" class="slide level2">
+<h2>regla de Cramer</h2>
+<p>La regla de Cramer es un método para resolver sistemas de ecuaciones lineales.</p>
+<p>Si tengo un sistema de ecuaciones lineales de la forma:</p>
+<p><span class="math display">\[\begin{align*}
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&amp;=b_1\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&amp;=b_2\\
+\vdots\\
+a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n&amp;=b_n
+\end{align*}\]</span></p>
 </section>
 <section class="slide level2">
 
+<p>La solución del sistema es: <span class="math display">\[x_1=\frac{det(A_1)}{det(A)},\quad x_2=\frac{det(A_2)}{det(A)},\quad\cdots,\quad x_n=\frac{det(A_n)}{det(A)}\]</span></p>
+<p>Donde <span class="math inline">\(A\)</span> es la matriz de coeficientes del sistema y <span class="math inline">\(A_i\)</span> es la matriz que se obtiene al reemplazar la columna <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por el vector de términos independientes.</p>
 </section>
 <section class="slide level2">
 
-<h3 id="operaciones-con-matrices">Operaciones con Matrices</h3>
-<p><strong>Operaciones Básicas con Matrices</strong></p>
-<ul>
-<li><strong>Suma de Matrices</strong>: Las matrices se suman elemento por elemento.</li>
-</ul>
-<p><span class="math display">\[\begin{bmatrix} 1 &amp; 3 \\ 1 &amp; 0 \end{bmatrix} + \begin{bmatrix} 0 &amp; 0 \\ 7 &amp; 5 \end{bmatrix} = \begin{bmatrix} 1 &amp; 3 \\ 8 &amp; 5 \end{bmatrix}\]</span></p>
-</section>
-<section class="slide level2">
-
-<ul>
-<li><strong>Multiplicación por un Escalar</strong>: Todos los elementos de la matriz se multiplican por el escalar.</li>
-</ul>
-<p><span class="math display">\[3     \times \begin{bmatrix} 1 &amp; 3 \\ 1 &amp; 0 \end{bmatrix} = \begin{bmatrix} 3 &amp; 9 \\ 3 &amp; 0 \end{bmatrix}\]</span></p>
-</section>
-<section class="slide level2">
-
-<ul>
-<li><strong>Multiplicación de Matrices</strong>: El elemento en la posición <span class="math inline">\((i, j)\)</span> del producto es el producto punto de la fila i de la primera matriz y la columna j de la segunda matriz.</li>
-</ul>
-<p><span class="math display">\[ \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}     \times \begin{bmatrix} 2 &amp; 0 \\ 1 &amp; 2 \end{bmatrix} = \begin{bmatrix} 4 &amp; 4 \\ 10 &amp; 8 \end{bmatrix}\]</span></p>
-</section>
-<section class="slide level2">
-
-<p>La multiplicación de matrices se define como sigue: <span class="math display">\[
-(C)_{ij} = \sum_{k=1}^n A_{ik} B_{kj}
-\]</span> Donde:</p>
-<ul>
-<li><span class="math inline">\(A\)</span> es una matriz de dimensiones <span class="math inline">\(m \times n\)</span></li>
-<li><span class="math inline">\(B\)</span> es una matriz de dimensiones <span class="math inline">\(n \times p\)</span></li>
-<li><span class="math inline">\(C\)</span> es la matriz resultante de dimensiones <span class="math inline">\(m \times p\)</span></li>
-<li><span class="math inline">\(i\)</span> es el índice de fila para la matriz resultante <span class="math inline">\(C\)</span></li>
-<li><span class="math inline">\(j\)</span> es el índice de columna para la matriz resultante <span class="math inline">\(C\)</span></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p><strong>Ejemplo</strong></p>
-<p>Supongamos que queremos multiplicar las siguientes matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>:</p>
-<p><span class="math display">\[
-A = \begin{bmatrix}
-1 &amp; 2 \\
-3 &amp; 4
-\end{bmatrix}, \quad B = \begin{bmatrix}
-2 &amp; 0 \\
-1 &amp; 2
-\end{bmatrix}
-\]</span></p>
-<p>La matriz resultante <span class="math inline">\(C\)</span> se calcularía como:</p>
-<p><span class="math display">\[
-C = \begin{bmatrix}
-(1 \cdot 2 + 2 \cdot 1) &amp; (1 \cdot 0 + 2 \cdot 2) \\
-(3 \cdot 2 + 4 \cdot 1) &amp; (3 \cdot 0 + 4 \cdot 2)
-\end{bmatrix} = \begin{bmatrix}
-4 &amp; 4 \\
-10 &amp; 8
-\end{bmatrix}
-\]</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="problema-de-costos-de-producción">Problema de Costos de Producción</h3>
-
-<img data-src="figures/produccion.png" class="r-stretch quarto-figure-center"><p class="caption">Problema de Costos de Producción</p></section>
-<section class="slide level2">
-
-<h3 id="producto-punto">Producto punto</h3>
-<p>Sea <span class="math inline">\(x\)</span> un vector de tamaño <span class="math inline">\(n\)</span> y <span class="math inline">\(y\)</span> un vector de tamaño <span class="math inline">\(n\)</span>. El producto punto entre <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span> se define como:</p>
-<p><span class="math display">\[ x \cdot y = \sum_{i=1}^n x_i y_i \]</span></p>
-</section>
-<section class="slide level2">
-
-<p><strong>Aplicación</strong> (Aplicación: cálculo de la calificación promedio de un curso) Suponga que un profesor utiliza cuatro notas para determinar la calificación promedio que obtiene un estudiante en un curso: cuestionarios, dos exámenes de una hora y un examen final. Cada una de estas notas tiene una ponderación de 10, 30, 30 y 30%, respectivamente. Si las calificaciones de un estudiante son, en cada rubro, 78, 84, 62 y 85, podemos calcular el promedio del curso haciendo</p>
-<p><span class="math display">\[w=\begin{bmatrix}0.1 \\ 0.3 \\ 0.3 \\ 0.3\end{bmatrix},\ \ x=\begin{bmatrix}78 \\ 84 \\ 62 \\ 85\end{bmatrix}\]</span></p>
-<p><span class="math display">\[w \cdot x = 0.1 \cdot 78 + 0.3 \cdot 84 + 0.3 \cdot 62 + 0.3 \cdot 85 = 77.1\]</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="definición-de-matriz-transpuesta">Definición de Matriz Transpuesta</h3>
-<p>La <strong>matriz transpuesta</strong> de una matriz <span class="math inline">\(A\)</span>, denotada como <span class="math inline">\(A^T\)</span>, se define como la matriz obtenida al intercambiar las filas por columnas de <span class="math inline">\(A\)</span>. Si <span class="math inline">\(A\)</span> es una matriz de dimensiones <span class="math inline">\(m \times n\)</span>, entonces <span class="math inline">\(A^T\)</span> tendrá dimensiones <span class="math inline">\(n \times m\)</span>. Matemáticamente, esto se puede escribir como:</p>
-<p><span class="math display">\[
-(A^T)_{ij} = A_{ji}
-\]</span></p>
-<p>donde <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span> representan índices de filas y columnas respectivamente.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="definición-de-matriz-simétrica">Definición de Matriz Simétrica</h3>
-<p>Una <strong>matriz simétrica</strong> es una matriz cuadrada <span class="math inline">\(A\)</span> que es igual a su transpuesta, es decir, <span class="math inline">\(A = A^T\)</span>. Esto implica que los elementos de la matriz son simétricos respecto a su diagonal principal. Formalmente, una matriz <span class="math inline">\(A\)</span> es simétrica si:</p>
-<p><span class="math display">\[
-A_{ij} = A_{ji}
-\]</span></p>
-<p>para todos los índices <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span>. Esto significa que el elemento en la fila <span class="math inline">\(i\)</span> y columna <span class="math inline">\(j\)</span> es igual al elemento en la fila <span class="math inline">\(j\)</span> y columna <span class="math inline">\(i\)</span>.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="definición-de-matriz-identidad">Definición de Matriz Identidad</h3>
-<p>La <strong>matriz identidad</strong> <span class="math inline">\(I\)</span>, de tamaño <span class="math inline">\(n \times n\)</span>, es una matriz cuadrada que tiene todos sus elementos iguales a 0 excepto los de la diagonal principal, que son iguales a 1. Esto se puede expresar como:</p>
-<p><span class="math display">\[
-I_{ij} =
-\begin{cases}
-1 &amp; \text{si } i = j \\
-0 &amp; \text{si } i \neq j
-\end{cases}
-\]</span></p>
-<p>La multiplicación de matrices, es decir, para cualquier matriz <span class="math inline">\(A\)</span> de tamaño <span class="math inline">\(n \times n\)</span>, se cumple que:</p>
-<p><span class="math display">\[
-AI = IA = A
-\]</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="definición-de-matriz-inversa">Definición de Matriz Inversa</h3>
-<p>La <strong>matriz inversa</strong> de una matriz cuadrada <span class="math inline">\(A\)</span>, denotada como <span class="math inline">\(A^{-1}\)</span>, es aquella que, cuando se multiplica por <span class="math inline">\(A\)</span>, resulta en la matriz identidad <span class="math inline">\(I\)</span>. Esto se expresa como:</p>
-<p><span class="math display">\[
-AA^{-1} = A^{-1}A = I
-\]</span></p>
-<p>Para que una matriz <span class="math inline">\(A\)</span> tenga inversa, debe ser cuadrada y su determinante no debe ser cero. La matriz inversa se utiliza para resolver sistemas de ecuaciones lineales y en la teoría de transformaciones lineales.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="ejemplo-de-matriz-inversa">Ejemplo de Matriz Inversa</h3>
-<p>Considere la matriz <span class="math inline">\(A\)</span>:</p>
-<p><span class="math display">\[
-A = \begin{bmatrix}
-1 &amp; 2 \\
-3 &amp; 4
-\end{bmatrix}
-\]</span></p>
-<p>La matriz inversa es <span class="math display">\[
-A^{-1} = \begin{bmatrix}
--2 &amp; 1 \\
-1.5 &amp; -0.5
-\end{bmatrix}
-\]</span></p>
-</section>
-<section class="slide level2">
-
-</section>
-<section class="slide level2">
-
-<h3 id="combinaciones-lineales">Combinaciones lineales</h3>
-<p>Una combinación lineal de un conjunto de vectores <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> es una expresión de la forma:</p>
-<p><span class="math display">\[ c_1 v_1 + c_2 v_2 + \ldots + c_n v_n \]</span></p>
-<p>Donde <span class="math inline">\(c_1, c_2, \ldots, c_n\)</span> son escalares.</p>
-</section>
-<section class="slide level2">
-
-<p><strong>Ejemplo de combinación lineal</strong></p>
-<h3 id="ejemplo-de-combinación-lineal-de-vectores-de-tres-dimensiones">Ejemplo de Combinación Lineal de Vectores de Tres Dimensiones</h3>
-<p>Consideremos los siguientes vectores en <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
-<p><span class="math display">\[
-\mathbf{v}_1 = \begin{pmatrix}
-1 \\
-2 \\
-3
-\end{pmatrix}, \quad \mathbf{v}_2 = \begin{pmatrix}
-4 \\
-5 \\
-6
-\end{pmatrix}, \quad \mathbf{v}_3 = \begin{pmatrix}
-7 \\
-8 \\
-9
-\end{pmatrix}
-\]</span></p>
-<p>Una <strong>combinación lineal</strong> de estos vectores se forma al tomar escalares <span class="math inline">\(\alpha, \beta, \gamma\)</span>, que pueden ser cualquier número real, y combinar los vectores de la siguiente manera:</p>
-<p><span class="math display">\[
-\alpha \mathbf{v}_1 + \beta \mathbf{v}_2 + \gamma \mathbf{v}_3
-\]</span></p>
-</section>
-<section class="slide level2">
-
-<p>Por ejemplo, si elegimos <span class="math inline">\(\alpha = 1\)</span>, <span class="math inline">\(\beta = -2\)</span>, y <span class="math inline">\(\gamma = 3\)</span>, la combinación lineal sería:</p>
-<p><span class="math display">\[
-1 \cdot \begin{pmatrix}
-1 \\
-2 \\
-3
-\end{pmatrix} - 2 \cdot \begin{pmatrix}
-4 \\
-5 \\
-6
-\end{pmatrix} + 3 \cdot \begin{pmatrix}
-7 \\
-8 \\
-9
-\end{pmatrix} = \begin{pmatrix}
-1 \cdot 1 - 2 \cdot 4 + 3 \cdot 7 \\
-1 \cdot 2 - 2 \cdot 5 + 3 \cdot 8 \\
-1 \cdot 3 - 2 \cdot 6 + 3 \cdot 9
-\end{pmatrix} = \begin{pmatrix}
-14 \\
-13 \\
-12
-\end{pmatrix}
-\]</span></p>
-<table class="caption-top" style="width:4%;">
-<colgroup>
-<col style="width: 4%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Este resultado, <span class="math inline">\(\begin{pmatrix}
-14 \\
-13 \\
-12
-\end{pmatrix}\)</span>, es un vector en <span class="math inline">\(\mathbb{R}^3\)</span> que es una combinación lineal de <span class="math inline">\(\mathbf{v}_1\)</span>, <span class="math inline">\(\mathbf{v}_2\)</span>, y <span class="math inline">\(\mathbf{v}_3\)</span> con los coeficientes 1, -2, y 3 respectivamente.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="sistema-de-ecuaciones-lineales" class="slide level2">
-<h2>Sistema de ecuaciones lineales</h2>
-<p>Un <strong>sistema de ecuaciones lineales</strong> es un conjunto de ecuaciones lineales que comparten las mismas variables. Un sistema de ecuaciones lineales puede tener una o más soluciones, dependiendo de la cantidad de ecuaciones y variables. Un sistema de ecuaciones lineales se puede representar de la siguiente manera:</p>
-<p><span class="math display">\[ a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n = b_1 \]</span> <span class="math display">\[ a_{21} x_1 + a_{22} x_2 + \ldots + a_{2n} x_n = b_2 \]</span> <span class="math display">\[ \vdots \]</span> <span class="math display">\[ a_{m1} x_1 + a_{m2} x_2 + \ldots + a_{mn} x_n = b_m \]</span> Donde:</p>
-<ul>
-<li><span class="math inline">\(a_{ij}\)</span> son los coeficientes de las variables</li>
-<li><span class="math inline">\(x_i\)</span> son las variables</li>
-<li><span class="math inline">\(b_i\)</span> son los términos constantes</li>
-<li><span class="math inline">\(m\)</span> es el número de ecuaciones</li>
-<li><span class="math inline">\(n\)</span> es el número de variables</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="ejemplo-de-sistema-de-ecuaciones-lineales">Ejemplo de Sistema de Ecuaciones Lineales</h3>
-<p>Considere el siguiente sistema de ecuaciones lineales:</p>
-<p><span class="math display">\[ 2x + 3y = 7 \]</span> <span class="math display">\[ 4x - y = 7 \]</span></p>
-<p>Para resolver este sistema, podemos usar el método de eliminación o sustitución. En este caso, podemos resolver el sistema de ecuaciones lineales para encontrar que <span class="math inline">\(x = 2\)</span> y <span class="math inline">\(y = 1\)</span>.</p>
-</section>
-<section class="slide level2">
-
-<p>Note que el vector</p>
-<p><span class="math display">\[2\begin{pmatrix}2 \\
-4\end{pmatrix}+1\begin{pmatrix}3\\-1\end{pmatrix}=\begin{pmatrix}7\\7\end{pmatrix}\]</span></p>
-<p>¿Qué significa esto? ¿Como podemos encontrar la solcuión de un sistema de ecuaciones lineales?</p>
-</section>
-<section id="ejemplo-2" class="slide level2">
-<h2>Ejemplo 2</h2>
-<p>veamos otro ejemplo</p>
-<p><span class="math display">\[ 3x + 2y = 11 \]</span> <span class="math display">\[ 2x - y = 5 \]</span> <span class="math display">\[ 5x + 3y = 18 \]</span></p>
-<p>Note que el vector</p>
-<p><span class="math display">\[2\begin{pmatrix}3 \\ 2\\ 5
-\end{pmatrix}+1\begin{pmatrix}2\\-1\\ 3\end{pmatrix}=\begin{pmatrix}11\\5\\18\end{pmatrix}\]</span></p>
-</section>
-<section class="slide level2">
-
-<p>Note que podemos encontrar la solución de un sistema de ecuaciones lineales como una combinación lineal de los vectores que representan las ecuaciones.</p>
-<p>Podemos estudiar sistemas de diferentes dimensiones. Aunque, en primera parte de este curso nos enfocaremos en sistemas cuadrados. es decir, que tengan el mismo numero de filas y columnas.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="solución-de-un-sistema-de-ecuaciones-lineales">Solución de un Sistema de Ecuaciones Lineales</h3>
-<ul>
-<li>Sustitución</li>
-<li>Eliminación</li>
-<li>Reducción</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="solución-de-un-sistema-de-ecuaciones-lineales-triangular">solución de un sistema de ecuaciones lineales triangular</h3>
-<p>Ejemplo:</p>
-<p><span class="math display">\[  3x + 2y + z = 1 \]</span> <span class="math display">\[  0x - 2y + 2z = 2 \]</span> <span class="math display">\[  0x + 0y + 5z = 5 \]</span></p>
-<p>Para resolver este sistema encontramos la solución de la tercera ecuación y sustituimos en la segunda ecuación y luego en la primera ecuación.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="ejercicio">Ejercicio</h3>
-<p>Resuelva el siguiente sistema de ecuaciones lineales:</p>
-<p><span class="math display">\[ 2x + 3y +z -w= 7 \]</span> <span class="math display">\[ 0x - 2y + 2z +w = 2 \]</span> <span class="math display">\[ 0x + 0y + 5z -w = 5 \]</span> <span class="math display">\[ 0x + 0y + 0z +w = 1 \]</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="operaciones-elementales-de-matrices">Operaciones elementales de matrices</h3>
-<p>Las operaciones elementales de matrices son operaciones que se pueden realizar en las filas de una matriz sin cambiar la solución de un sistema de ecuaciones lineales. Estas operaciones incluyen:</p>
-<ul>
-<li>Intercambiar dos filas</li>
-<li>Multiplicar una fila por un escalar no nulo</li>
-<li>Sumar un múltiplo de una fila a otra fila</li>
-</ul>
-<p>Estas operaciones se utilizan para simplificar una matriz y facilitar la resolución de un sistema de ecuaciones lineales.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="ejemplo-de-operaciones-elementales-de-matrices">Ejemplo de Operaciones Elementales de Matrices</h3>
-<p>Considere la siguiente matriz:</p>
-$$
-<span class="math display">\[\begin{bmatrix}
-
-1 &amp; 2 &amp; 3 \\
-
-4 &amp; 5 &amp; 6 \\
-
-7 &amp; 8 &amp; 9
-
-\end{bmatrix}\]</span>
-</section>
-<section class="slide level2">
-
-<p>¿Cómo podemos usar las operaciones elementales para solucionar un sistema de ecuaciones lineales?</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -694,19 +441,19 @@ $$
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="primera_Clase_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="tema2_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="primera_Clase_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="primera_Clase_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="primera_Clase_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="tema2_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

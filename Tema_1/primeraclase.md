@@ -287,3 +287,132 @@ Este resultado, $\begin{pmatrix}
 
 
 
+
+## Sistema de ecuaciones lineales
+
+Un **sistema de ecuaciones lineales** es un conjunto de ecuaciones lineales que comparten las mismas variables. Un sistema de ecuaciones lineales puede tener una o más soluciones, dependiendo de la cantidad de ecuaciones y variables. Un sistema de ecuaciones lineales se puede representar de la siguiente manera:
+
+$$ a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n = b_1 $$
+$$ a_{21} x_1 + a_{22} x_2 + \ldots + a_{2n} x_n = b_2 $$
+$$ \vdots $$
+$$ a_{m1} x_1 + a_{m2} x_2 + \ldots + a_{mn} x_n = b_m $$
+Donde:
+
+  + $a_{ij}$ son los coeficientes de las variables
+  + $x_i$ son las variables
+  + $b_i$ son los términos constantes
+  + $m$ es el número de ecuaciones
+  + $n$ es el número de variables
+
+
+
+### Ejemplo de Sistema de Ecuaciones Lineales
+
+Considere el siguiente sistema de ecuaciones lineales:
+
+$$ 2x + 3y = 7 $$
+$$ 4x - y = 7 $$
+
+Para resolver este sistema, podemos usar el método de eliminación o sustitución. En este caso, podemos resolver el sistema de ecuaciones lineales para encontrar que $x = 2$ y $y = 1$.
+
+
+Note que el vector 
+
+$$2\begin{pmatrix}2 \\
+ 4\end{pmatrix}+1\begin{pmatrix}3\\-1\end{pmatrix}=\begin{pmatrix}7\\7\end{pmatrix}$$
+
+¿Qué significa esto?
+¿Como podemos encontrar la solcuión de un sistema de ecuaciones lineales?
+
+
+
+## Ejemplo 2
+veamos otro ejemplo
+
+$$ 3x + 2y = 11 $$
+$$ 2x - y = 5 $$
+$$ 5x + 3y = 18 $$
+
+Note que el vector 
+
+$$2\begin{pmatrix}3 \\ 2\\ 5
+ \end{pmatrix}+1\begin{pmatrix}2\\-1\\ 3\end{pmatrix}=\begin{pmatrix}11\\5\\18\end{pmatrix}$$
+
+
+
+
+Note que podemos encontrar la solución de un sistema de ecuaciones lineales como una combinación lineal de los vectores que representan las ecuaciones. 
+
+Podemos estudiar sistemas de diferentes dimensiones. Aunque, en primera parte de este curso nos enfocaremos en sistemas cuadrados. es decir, que tengan el mismo numero de filas y columnas.
+
+
+
+
+### Solución de un Sistema de Ecuaciones Lineales
+
++ Sustitución
++ Eliminación
++ Reducción
+
+
+
+### solución de un sistema de ecuaciones lineales triangular 
+
+Ejemplo:
+
+$$  3x + 2y + z = 1 $$
+$$  0x - 2y + 2z = 2 $$
+$$  0x + 0y + 5z = 5 $$
+
+Para resolver este sistema encontramos la solución de la tercera ecuación y sustituimos en la segunda ecuación y luego en la primera ecuación.
+
+
+
+### Ejercicio
+
+Resuelva el siguiente sistema de ecuaciones lineales:
+
+$$ 2x + 3y +z -w= 7 $$
+$$ 0x - 2y + 2z +w = 2 $$
+$$ 0x + 0y + 5z -w = 5 $$
+$$ 0x + 0y + 0z +w = 1 $$
+
+
+
+
+### Operaciones elementales de matrices
+
+Las operaciones elementales de matrices son operaciones que se pueden realizar en las filas de una matriz sin cambiar la solución de un sistema de ecuaciones lineales. Estas operaciones incluyen:
+
++ Intercambiar dos filas
++ Multiplicar una fila por un escalar no nulo
++ Sumar un múltiplo de una fila a otra fila
+
+Estas operaciones se utilizan para simplificar una matriz y facilitar la resolución de un sistema de ecuaciones lineales.
+
+
+
+### Ejemplo de Operaciones Elementales de Matrices
+
+Considere la siguiente matriz:
+
+$$
+\begin{bmatrix}
+
+1 & 2 & 3 \\
+
+4 & 5 & 6 \\
+
+7 & 8 & 9
+
+\end{bmatrix}
+
+
+
+¿Cómo podemos usar las operaciones elementales para solucionar un sistema de ecuaciones lineales?
+
+
+
+
+
+
