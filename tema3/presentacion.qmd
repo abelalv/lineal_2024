@@ -1,0 +1,210 @@
+---
+title: "Espacios Vectorial y Subespacios"
+subtitle: '$\mathbb{R}^n$'
+date: " "
+format:
+  revealjs:
+    theme: simple    # Puedes cambiar el tema (simple, black, white, etc.)
+    slide-number: true # Mostrar el número de diapositiva
+    transition: slide # Tipo de transición (slide, fade, etc.)
+    incremental: true # Activar aparición progresiva de los puntos
+    toc: true         # Mostrar tabla de contenidos
+    toc-title: "Tabla de Contenidos"
+    slide-level: 2    # Nivel de encabezado que inicia una nueva diapositiva
+    center: true      # Centrar contenido en las diapositivas
+---
+
+
+# Espacios Vectorial $\mathbb{R}^n$
+
+## Definición
+Un espacio vectorial $\mathbb{R}^n$ es el conjunto de todas las n-tuplas ordenadas de números reales. Es decir, $\mathbb{R}^n = \{(x_1, x_2, \ldots, x_n) \mid x_i \in \mathbb{R}\}$.
+
+**¿Cómo podemos definir un vector?**
+
+![vector](figures/vector.png)
+
+Es la única forma de definir un vector en $\mathbb{R}^n$.
+
+**Notación:** En general, denotamos un vector en $\mathbb{R}^n$ como $(x_1, x_2, \ldots, x_n)$, o de forma matricial como $\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}$.
+
+
+---
+
+## Operaciones
+
+Dadas dos n-tuplas $(x_1, x_2, \ldots, x_n)$ y $(y_1, y_2, \ldots, y_n)$, se definen las siguientes operaciones:
+
+1. **Suma**: $(x_1, x_2, \ldots, x_n) + (y_1, y_2, \ldots, y_n) = (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n)$.
+
+2. **Multiplicación por un escalar**: $k(x_1, x_2, \ldots, x_n) = (kx_1, kx_2, \ldots, kx_n)$.
+
+## Propiedades
+
+1. **Conmutatividad de la suma**: $(x + y) = (y + x)$.
+
+2. **Asociatividad de la suma**: $(x + y) + z = x + (y + z)$.
+
+3. **Elemento neutro de la suma**: Existe un elemento $0 = (0, 0, \ldots, 0)$ tal que $x + 0 = x$.
+
+4. **Elemento opuesto de la suma**: Para cada $x$ existe un elemento $-x$ tal que $x + (-x) = 0$.
+
+5. **Distributividad de la multiplicación por un escalar respecto a la suma de vectores**: $k(x + y) = kx + ky$.
+
+6. **Distributividad de la multiplicación por un escalar respecto a la suma de escalares**: $(k + l)x = kx + lx$.
+
+7. **Asociatividad de la multiplicación por un escalar**: $k(lx) = (kl)x$.
+
+8. **Elemento neutro de la multiplicación por un escalar**: $1x = x$.
+
+---
+
+Note que para definir un espacio vectorial debemos definir un conjunto y dos operaciones. En este caso, el conjunto es el conjunto de n-tuplas de números reales y las operaciones son la suma y la multiplicación por un escalar.
+
+## Ejemplos
+
+1. $\mathbb{R}^2 = \{(x, y) \mid x, y \in \mathbb{R}\}$, con la definición usual de la suma y la multiplicación por un escalar.
+
+2. $\mathbb{R}^3 = \{(x, y, z) \mid x, y, z \in \mathbb{R}\}$, con la definición usual de la suma y la multiplicación por un escalar.
+
+
+
+
+
+---
+
+3. Un ejemplo de un espacio vectorial sobre $\mathbb{R}^2$ que no sea el usual es el espacio de matrices simétricas de $2 \times 2$ con entradas en $\mathbb{R}$. Este espacio se puede definir como:
+
+$$
+V = \left\{ \begin{pmatrix} a & b \\ b & c \end{pmatrix} \mid a, b, c \in \mathbb{R} \right\}
+$$
+
+Este conjunto $V$ cumple con las propiedades de un espacio vectorial sobre $\mathbb{R}$:
+
+\begin{itemize}
+    \item \textbf{Cierre bajo la adición:} Si tomas dos matrices simétricas de $V$, su suma también será una matriz simétrica de $V$.
+    $$
+    \begin{pmatrix} a_1 & b_1 \\ b_1 & c_1 \end{pmatrix} + \begin{pmatrix} a_2 & b_2 \\ b_2 & c_2 \end{pmatrix} = \begin{pmatrix} a_1 + a_2 & b_1 + b_2 \\ b_1 + b_2 & c_1 + c_2 \end{pmatrix}
+    $$
+    
+    \item \textbf{Cierre bajo la multiplicación por un escalar:} Si multiplicas una matriz simétrica de $V$ por un escalar $ \lambda \in \mathbb{R}$, el resultado también será una matriz simétrica en $V$.
+    $$
+    \lambda \begin{pmatrix} a & b \\ b & c \end{pmatrix} = \begin{pmatrix} \lambda a & \lambda b \\ \lambda b & \lambda c \end{pmatrix}
+    $$
+\end{itemize}
+
+Este espacio vectorial no es el usual $\mathbb{R}^2$, ya que sus elementos no son pares ordenados $(x, y)$, sino matrices simétricas de $2 \times 2$.
+
+---
+
+
+**Espacios vecotoriales en general**
+
+4. Los polinomios de grado menor o igual a $n$ forman un espacio vectorial sobre $\mathbb{R}$. Este espacio se puede definir como:
+
+$$P_n = \{a_0 + a_1x + a_2x^2 + \ldots + a_nx^n \mid a_i \in \mathbb{R}\}$$
+
+con las operaciones de suma y multiplicación por un escalar usuales.
+
+
+5. $\mathbb{R}^2 = \{(x, y) \mid x, y \in \mathbb{R}\}$, con la definición de suma y multiplicación por un escalar dadas por $(x_1, y_1) + (x_2, y_2) = (x_1 + x_2, 0)$ y $k(x, y) = (kx, y)$.
+
+
+---
+
+# combinación lineal
+
+## Definición
+
+Dado un conjunto de vectores $\{v_1, v_2, \ldots, v_n\}$ en un espacio vectorial $V$, una combinación lineal de estos vectores es un vector de la forma:
+
+$$\alpha_1v_1 + \alpha_2v_2 + \ldots + \alpha_nv_n=v$$
+
+Aqui se dice que $\alpha_1, \alpha_2, \ldots, \alpha_n$ son los coeficientes de la combinación lineal y que $v$ se escribió como una combinación lineal de los vectores $\{v_1, v_2, \ldots, v_n\}$.
+
+
+## Ejemplo
+
+$$e_1 = (1, 0, 0), e_2 = (0, 1, 0), e_3 = (0, 0, 1)$$
+
+$$v = (2, 3, 4) = 2(1, 0, 0) + 3(0, 1, 0) + 4(0, 0, 1)$$
+
+Lo cual quiere decir que $v$ es una combinación lineal de los vectores $e_1, e_2, e_3$.
+
+---
+
+¿Todo vector de $\mathbb{R}^3$ es una combinación lineal de $e_1, e_2, e_3$?
+
+## Definición
+
+Se dice que el espacio generado por un conjunto de vectores $\{v_1, v_2, \ldots, v_n\}$ es el conjunto de todas las combinaciones lineales de estos vectores. Se denota por $\langle v_1, v_2, \ldots, v_n \rangle$.
+
+---
+
+* Supongamos que tenemos los vectores $v_1 = (1, 1)$ y $v_2 = (-5, -5)$. 
+
+¿Cuál es el espacio generado por estos vectores?
+
+* Supongamos que tenemos los vectores $v_1 = (1, 1)$ y $v_2 = (-1, 1)$
+
+¿Cuál es el espacio generado por estos vectores?
+
+
+¿Cómo podemos determinar si un vector $v$ está en el espacio generado por un conjunto de vectores $\{v_1, v_2, \ldots, v_n\}$?
+
+
+---
+
+# Linealmente independientes
+
+## Definición
+
+Un vector es linealmente independiente de un conjunto de vectores $\{v_1, v_2, \ldots, v_n\}$ si no puede ser escrito como una combinación lineal de los otros vectores.
+
+## Ejemplo 
+
+Dado el conjunto de vectores $\{v_1 = (1, 1), v_2 = (5, 5)\}$,
+
+$$\alpha_1(1, 1) + \alpha_2(5, 5) = (3, 0)$$
+
+Como no existen $\alpha_1, \alpha_2$ tales que se cumpla la ecuación, el vector $(3, 0)$ es linealmente independiente de los vectores $v_1, v_2$.
+
+¿Por qué? Se puede explicar graficamente en $\mathbb{R}^2$.
+
+
+## Ejemplo
+
+Dado el conjunto de vectores $\{v_1 = (1, 1), v_2 = (1, -1)\}$, 
+
+
+$$\alpha_1(1, 1) + \alpha_2(1, -1) = (2, 0)$$
+
+$v$ es linealmente dependiente de  de los vectores $v_1, v_2$.
+
+
+
+---
+
+
+# Bases
+
+## Definición
+
+Un conjunto de vectores $\{v_1, v_2, \ldots, v_n\}$ es una base de un espacio vectorial $V$ si:
+
+1. Los vectores son linealmente independientes.
+2. Cualquier vector en $V$ puede ser escrito como una combinación lineal de los vectores de la base.
+
+## Ejemplo
+
+Dado el espacio vectorial $\mathbb{R}^2$, los vectores $e_1 = (1, 0)$ y $e_2 = (0, 1)$ forman una base de $\mathbb{R}^2$.
+
+¿Por qué?
+
+---
+
+# Subespacios
+
+## Definición
+
+Un subespacio de un espacio vectorial $V$ es un subconjunto $W$ de $V$ que es un espacio vectorial con las operaciones de suma y multiplicación por un escalar de $V$.
