@@ -1,0 +1,47 @@
+---
+title: "Parcial Algebra lineal"
+output:
+  pdf:
+---
+
+**Nombre:**
+
+
+1. Sea el siguiente sistema de ecuaciones,
+
+$$\begin{cases}2x+z=0\\
+y+z=1\\
+x+y+\alpha z=-1\end{cases}$$
+
+
+Encuentre un $\alpha$ para que el sistema 
+
++ Sea inconsistente
+
++ Tenga una única solución
+2. Encuentre el determinante de 
+
+$$\begin{bmatrix}0&-2&0&0&0\\
+0&1&1&-1&-1\\
+1&1&0&2&0\\ 0&0&-1&2&1\\1&0&-1&0&1\end{bmatrix}$$
+3. Determine si es falsa o verdadera la siguientes afirmaciones, en caso que sea falsa, corrijala o de un ejemplo. En caso que sea verdadera, demuestre o justifique porque es verdadera.
+
+
+- Si $A$ es una matriz cuadrada y su determinante es cero, entonces $A$ tiene inversa.
+
+- Si el sistema 
+
+$$Ax=b$$
+
+tiene solución única, entonces $x$ se puede escribir como $x=A^{-1}b$.
+
+- Sea el sistema 
+
+$$\begin{cases}2x+y=1\\
+x+3y=-2\end{cases}$$
+
+entonces se puede decir que el vector 
+
+$$\begin{bmatrix}1\\-1\end{bmatrix}$$ 
+
+se puede escribir como combinación lineal de las columnas de la matriz de coeficientes del sistema.

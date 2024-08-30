@@ -1,0 +1,289 @@
+---
+title: "Espacios Vectorial y Subespacios"
+subtitle: '$\mathbb{R}^n$'
+date: " "
+format:
+  revealjs:
+    theme: simple    # Puedes cambiar el tema (simple, black, white, etc.)
+    slide-number: true # Mostrar el número de diapositiva
+    transition: slide # Tipo de transición (slide, fade, etc.)
+    incremental: true # Activar aparición progresiva de los puntos
+    toc: true         # Mostrar tabla de contenidos
+    toc-title: "Tabla de Contenidos"
+    slide-level: 2    # Nivel de encabezado que inicia una nueva diapositiva
+    center: true      # Centrar contenido en las diapositivas
+---
+
+**Objetivo**
+
+Al finalizar esta presentación, los participantes serán capaces de comprender y aplicar los conceptos fundamentales de espacio vectorial y subespacio vectorial en $R^n$, identificando cómo estos conceptos se manifiestan en distintos contextos matemáticos y prácticos.
+
+
+---
+
+**Definición subespacio vectorial**
+
+Un subconjunto $W$ de un espacio vectorial $V$ sobre $\mathbb{R}$ es un subespacio vectorial de $V$ si $W$ es un espacio vectorial  con las operaciones de adición y multiplicación por escalares de $V$.
+
+
+**ejemplo**
+
+Sea $V=\mathbb{R}^3$ y $W$ el conjunto de todos los vectores de la forma $(x,y,0)$ con $x,y\in\mathbb{R}$.
+
+**Note que $W$ es un subespacio de $\mathbb{R}^3$**
+
+
+---
+
+**Definición una base de un espacio vectorial de dimensión finita**
+
+Un conjunto $\{v_1,v_2,\ldots,v_n\}$ de vectores en un espacio vectorial $V$ es una base de $V$ si:
+
+1. $\{v_1,v_2,\ldots,v_n\}$ es linealmente independiente.
+
+2. $V$ es el subespacio generado por $\{v_1,v_2,\ldots,v_n\}$.
+
+**La dimensión de un espacio vectorial** $V$ es el número de vectores en una base de $V$.
+
+
+---
+
+**Ejemplo**
+
+Sea $V=\mathbb{R}^3$ y $v_1=(1,0,0)$, $v_2=(0,1,0)$ y $v_3=(0,0,1)$.
+
+1. **Podemos afirmar que $\{v_1,v_2,v_3\}$ es una base de $\mathbb{R}^3$?**
+
+2. **Cuál es la dimensión de $\mathbb{R}^3$?**
+
+
+
+---
+
+**Ejemplo**
+
+Sea $V=\mathbb{R}^5$ y $v_1=(1,1,0,0,0)$, $v_2=(-1,1,0,0,0)$.
+
+* **Podemos afirmar que $\{v_1,v_2\}$ es una base de $\mathbb{R}^5$?**
+
+* **Cuál es la dimensión de $\mathbb{R}^5$?**
+
+* Sea $W$ el subespacio generado por $\{v_1,v_2\}$.
+
+    - **Cuál es la dimensión de $W$?**
+    - **Cuál es una base de $W$?**
+
+---
+
+**Sea el siguiente sistema de ecuacias lineales**
+
+$$\begin{cases}
+x+2y+3z=0\\
+2x+3y+4z=-1\\
+3x+4y+5z=-2
+\end{cases}$$
+
+
+La solución del sistema es el vector $\begin{bmatrix}0\\-1\\-2\end{bmatrix}$
+
+
+---
+
+El sistema se puede escribir como una ecuación matricial $Ax=b$ donde
+
+$$A=\begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix},\quad x=\begin{bmatrix}x\\y\\z\end{bmatrix},\quad b=\begin{bmatrix}0\\-1\\-2\end{bmatrix}$$
+
+Note que el vector $b$ es una combinación lineal de las columnas de $A$ con coeficientes $-1,-1,1$.
+
+$$b=-1\begin{bmatrix}1\\2\\3\end{bmatrix}-1\begin{bmatrix}2\\3\\4\end{bmatrix}+1\begin{bmatrix}3\\4\\5\end{bmatrix}$$
+
+---
+
+* **¿Cuál es el subespacio generado por las columnas de $A$?**
+* **¿Cuál es la dimensión de este subespacio?**
+
+---
+
+**Ejemplo 2**
+
+Sea el sistema de ecuaciones lineales
+
+$$\begin{cases}
+x+2y=4\\
+2x+3y=7\\
+3x-y=5
+\end{cases}$$
+
+Note que el vector $b$  es una combinación lineal de las columnas de la matriz de coeficientes.
+
+$$\begin{bmatrix}4\\7\\5\end{bmatrix}= 2\begin{bmatrix}1\\2\\3\end{bmatrix}+1\begin{bmatrix}2\\3\\-1\end{bmatrix}$$
+
+---
+
+
+* **¿Cuál es el subespacio generado por las columnas de $A$?**
+* **¿Cuál es la dimensión de este subespacio?**
+* **Puedo representar gráficamente este fenómeno**
+
+---
+
+**Ejemplo 3**
+
+Sea el sistema de ecuaciones lineales
+
+$$\begin{cases}
+x+2y=4\\
+2x+3y=0\\
+3x-y=5
+\end{cases}$$
+
+Note que el vector $b$ no es una combinación lineal de las columnas de la matriz de coeficientes.
+
+$$\begin{bmatrix}4\\0\\5\end{bmatrix}\neq x\begin{bmatrix}1\\2\\3\end{bmatrix}+y\begin{bmatrix}2\\3\\-1\end{bmatrix}$$
+
+---
+
+
+* **¿Cuál es el subespacio generado por las columnas de $A$?**
+* **¿Cuál es la dimensión de este subespacio?**
+* **Puedo representar gráficamente este fenómeno**
+
+
+---
+
+![](figures/vectores.png)
+
+* **Cual sería el mejor vector para representar el vector $b$ en W?**
+
+* ¿Como podemos encontrar este vector?
+
+---
+
+**Producto punto**
+
+En $\mathbb{R}^n$ el producto punto de dos vectores $x=(x_1,x_2,\ldots,x_n)$ y $y=(y_1,y_2,\ldots,y_n)$ se define como
+
+$$x\cdot y=\langle x,y\rangle= x_1y_1+x_2y_2+\cdots+x_ny_n=\sum_{i=1}^nx_iy_i$$
+
+** Propiedades del producto punto**
+
+1. $\langle x,y\rangle=\langle y,x\rangle$
+2. $\langle x,y+z\rangle=\langle x,y\rangle+\langle x,z\rangle$
+3. $\langle x,\alpha y\rangle=\alpha\langle x,y\rangle$
+4. $\langle x,x\rangle\geq 0$ y $\langle x,x\rangle=0$ si y solo si $x=0$
+
+---
+
+
+
+
+
+**Ejemplo**
+
+Sea $x=(1,2,3)$ y $y=(4,5,6)$, entonces
+
+$$\langle x,y\rangle=1\cdot 4+2\cdot 5+3\cdot 6=4+10+18=32$$
+
+---
+
+**Propiedad fundamental del producto punto**
+
+Si $x$ y $y$ son vectores en $\mathbb{R}^n$, entonces
+
+$$\langle x,y\rangle=0$$
+
+si y solo si $x$ y $y$ son ortogonales.
+
+---
+
+Para responder la pregunta anterior, vamos a buscar el mejor vector  $b=(4,0,5)$ y el subespacio $W$ generado solo por la primera columna de la matriz de coeficientes $A$ que es $v_1=(1,2,3)$.
+
+**Note que $b$ es una combinación lineal de $v_1$**
+
+
+
+
+---
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Definiendo los vectores
+w = np.array([1, 2, 3])
+b = np.array([4, 0, 5])
+
+# Creando la figura para el gráfico
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Origen de los vectores
+origin = np.array([0, 0, 0])
+
+# Graficando el vector w
+ax.quiver(*origin, *w, color='r', label='Vector w (1, 2, 3)')
+
+# Graficando el vector b
+ax.quiver(*origin, *b, color='b', label='Vector b (4, 0, 5)')
+
+# Estableciendo los límites para los ejes
+ax.set_xlim([0, 5])
+ax.set_ylim([0, 5])
+ax.set_zlim([0, 5])
+
+# Añadiendo etiquetas para los ejes
+ax.set_xlabel('X axis')
+ax.set_ylabel('Y axis')
+ax.set_zlabel('Z axis')
+
+# Añadiendo una leyenda
+ax.legend()
+
+# Mostrar el gráfico
+plt.show()
+
+```
+
+
+---
+
+
+Note que para encontrar un vector $z\in W$ que sea el mejor aproximación a $b$ en $W$, debemos encontrar el vector $z$
+
+$$z=\alpha v_1$$
+$$\alpha v_1 + v_1^\perp=b$$
+
+al multiplicar por $v_1$ ambos lados de la ecuación anterior, obtenemos
+
+$$\alpha v_1\cdot v_1 + v_1\cdot v_1^\perp=b\cdot v_1$$
+
+
+$$\alpha \|v_1\|^2=b\cdot v_1$$
+
+$$\alpha=\frac{b\cdot v_1}{\|v_1\|^2}$$
+
+**Esto lo podemos llamar la proyección de $b$ en $W$**
+
+---
+
+
+
+
+Sea $\{v_1,v_2\}$ vectores linealmente independientes en $\mathbb{R}^3$.
+
+1. **Podemos afirmar que $\{v_1,v_2\}$ es una base de $\mathbb{R}^3$?**
+
+2. Sea $W$ el subespacio generado por $\{v_1,v_2\}$.
+
+    - **Cuál es la dimensión de $W$?**
+    - **Cuál es una base de $W$?**
+
+3. Sea $v_3\in W$, ¿ Que significa esto?
+
+
+---
