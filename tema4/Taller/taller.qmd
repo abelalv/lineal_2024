@@ -1,0 +1,62 @@
+---
+title: "Taller de Álgebra Lineal"
+author: " Abel Alvarez"
+date: "05/09/2024"
+format: 
+  pdf:
+    toc: false # Para incluir tabla de contenidos
+    toc-depth: 2 # Nivel de profundidad en el índice
+    number-sections: false # Numeración de secciones
+    geometry: 
+      - margin=1in
+    fontsize: 12pt
+    documentclass: article
+    header-includes: 
+      - \usepackage{amsmath} # Paquete para símbolos matemáticos
+      - \usepackage{amsfonts} # Paquete para fuentes matemáticas
+      - \usepackage{amssymb} # Paquete para símbolos adicionales
+      - \usepackage{graphicx} # Paquete para insertar imágenes
+---
+
+**Objetivo** Afianzar los conceptos fundamentales de espacios vectoriales, subespacios vectoriales, bases, independencia lineal, producto punto y proyección ortogonal.
+
+1. Defina los siguientes términos y proporciona ejemplos 
+    
+    - Espacios Vectoriales
+
+    - Subespacio vectorial
+
+    - Bases de un Espacio Vectorial
+
+    - Independencia Lineal
+
+2. Describa como podemos representar graficamente la suma de dos vectores en $\mathbb{R}^2$. Además, describa graficamente como podemos interpretar el producto por un escalar de un vector en $\mathbb{R}^2$ y proporcione un ejemplo en cada situación.
+
+
+3. Escriba si las siguientes afirmaciones son verdaderas o falsas. Justifique su respuesta.
+    
+    - Un conjunto de vectores es linealmente independiente si al menos uno de los vectores es un múltiplo de otro.
+
+    - Si un conjunto de vectores es linealmente independiente, entonces necesariamente es una base para el espacio vectorial.
+
+    - En $\mathbb{R}^3$, el conjunto de vectores $\{(1, 0, 0), (0, 1, -1), (1, 0, 1)\}$ es una base.
+
+    - En $\mathbb{R}^2$, el conjunto de vectores $\{(1, 0), (0, 1), (1, 1)\}$ es una base.
+
+    - Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores ortogonales, entonces su producto punto es cero.
+
+4. **Verificación de Espacio Vectorial:** Dado el conjunto de funciones $V = \{ f: \mathbb{R} \to \mathbb{R} \}$, donde cada función está definida por $f(x) = ax^2 + bx + c$, con $a, b, c \in \mathbb{R}$. Verifica si $V$ es un espacio vectorial bajo la suma y multiplicación escalar usuales.
+    
+5. **Cálculo de una Base:** Sean los vectores $\mathbf{v}_1 = (1, 2, 3)$, $\mathbf{v}_2 = (4, 5, 6)$ y $\mathbf{v}_3 = (5, 7, 9)$ en $\mathbb{R}^3$. Encuentra una base para el subespacio generado por estos vectores. ¿Cuál es la dimensión de este subespacio?
+
+
+6. **Independencia Lineal:** Dado el conjunto de vectores $\mathbf{u}_1 = (1, 0, 1)$, $\mathbf{u}_2 = (0, 1, 0)$ y $\mathbf{u}_3 = (1, 1, 1)$ en $\mathbb{R}^3$, determina si estos vectores son linealmente independientes.
+    
+7. **Producto Punto:** Define el producto punto de dos vectores, escriba sus propiedades. Explica cómo se utiliza el producto punto para determinar si dos vectores son ortogonales.
+    
+8. **Proyección Ortogonal:** Explica el concepto de proyección ortogonal de un vector sobre otro. Proporciona una fórmula para calcularla la proyección de un vector sobre otro.
+    
+9. **Cálculo del Producto Punto:** Dados los vectores $\mathbf{a} = (1, 2, 3)$ y $\mathbf{b} = (1, 0, -1)$, calcula su producto punto. ¿Los vectores $\mathbf{a}$ y $\mathbf{b}$ son ortogonales?
+    
+10. **Cálculo de la Proyección Ortogonal:** Dado el vector $\mathbf{u} = (3, 4,3)$  encuentre una forma para calcular un vector ortogonal a $\mathbf{u}$.
+    
