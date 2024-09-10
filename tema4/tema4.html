@@ -357,6 +357,26 @@
 <li class="fragment"></li>
 <li class="fragment"></li>
 <li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
 </ul>
 </nav>
 </section>
@@ -470,7 +490,7 @@ x+2y=4\\
 
 <ul>
 <li class="fragment"><strong>¿Cuál es el subespacio generado por las columnas de <span class="math inline">\(A\)</span>?</strong></li>
-<li class="fragment"><strong>¿Cuál es la dimensión de este subespacio?</strong></li>
+<li class="fragment"><strong>¿Cuál es la dimensión de ste subespacio?</strong></li>
 <li class="fragment"><strong>Puedo representar gráficamente este fenómeno</strong></li>
 </ul>
 </section>
@@ -515,7 +535,7 @@ x+2y=4\\
 </section>
 <section class="slide level2 center">
 
-<div id="8271a4c1" class="cell" data-execution_count="1">
+<div id="5ceedc53" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -550,6 +570,153 @@ x+2y=4\\
 </section>
 <section class="slide level2 center">
 
+<p><strong>Ejemplo</strong></p>
+<p>Recordemos que el sistema de ecuaciones lineales</p>
+<p><span class="math display">\[\begin{cases}
+x+2y=4\\
+2x+3y=0\\
+3x-y=5
+\end{cases}\]</span></p>
+<p>Note que el vector <span class="math inline">\(b\)</span> no es una combinación lineal de las columnas de la matriz de coeficientes.</p>
+<p><span class="math display">\[\begin{bmatrix}4\\0\\5\end{bmatrix}\neq x\begin{bmatrix}1\\2\\3\end{bmatrix}+y\begin{bmatrix}2\\3\\-1\end{bmatrix}\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>Recordemos que podemos generar el subespacio <span class="math inline">\(W\)</span> con los vectores <span class="math inline">\(v_1=(1,2,3)\)</span> y <span class="math inline">\(v_2=(2,3,-1)\)</span>.</p>
+<p><strong>Note que <span class="math inline">\(b\)</span> no es una combinación lineal de <span class="math inline">\(v_1\)</span> y <span class="math inline">\(v_2\)</span></strong></p>
+<p>Lo que queremos encontrar es el vector <span class="math inline">\(z\in W\)</span> que sea la mejor aproximación a <span class="math inline">\(b\)</span> en <span class="math inline">\(W\)</span>.</p>
+<p>luego</p>
+<p><span class="math display">\[z=\alpha v_1+\beta v_2\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><strong>Note</strong> que este procedimiento se llama proyección de <span class="math inline">\(b\)</span> en <span class="math inline">\(W\)</span> y se simboliza como</p>
+<p><span class="math display">\[\text{proy}_W(b)\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">\[\alpha v_1+\beta v_2=b\]</span> si multiplicamos, usando el producto punto, la igualdad por un vector <span class="math inline">\(v_1\)</span> que sea sea perpendicular<br>
+y que</p>
+<p><span class="math display">\[z+R=b\]</span></p>
+<p><span class="math display">\[\langle v_1,\alpha v_1+\beta v_2\rangle + \langle v_1,R\rangle =\langle v_1,b \rangle\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>usando las propiedades del producto punto, obtenemos</p>
+<p><span class="math display">\[\alpha \langle v_1,v_1\rangle + \beta \langle v_1,v_2\rangle =\langle v_1,b \rangle\]</span></p>
+<p>De forma similar multiplicando por <span class="math inline">\(v_2\)</span> obtenemos <span class="math display">\[\langle v_2,\alpha v_1+\beta v_2\rangle + \langle v_1,R\rangle =\langle v_2,b \rangle\]</span></p>
+<p><span class="math display">\[\alpha \langle v_2,v_1\rangle + \beta \langle v_2,v_2\rangle =\langle v_2,b \rangle\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>De esta forma tenemos un sistema de ecuaciones lineales</p>
+<p><span class="math display">\[\begin{cases}
+\langle v_1,v_1\rangle \alpha + \langle v_1,v_2\rangle \beta =\langle v_1,b \rangle\\
+\langle v_2,v_1\rangle \alpha + \langle v_2,v_2\rangle \beta =\langle v_2,b \rangle
+\end{cases}\]</span></p>
+<p><strong>Encuentre los valores de <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span></strong></p>
+</section>
+<section class="slide level2 center">
+
+<p><strong>Ejemplo</strong></p>
+<p>En la fabricación del producto XXX, la cantidad de compuesto beta presente es controlada por la cantidad del ingrediente alfa utilizada en el proceso. Al fabricar un galón de XXX, se registraron la cantidad de alfa usada y la cantidad de beta presente, obteniéndose los siguientes datos</p>
+
+<img data-src="figures/mcm_1.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+
+<img data-src="figures/mcm_2.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+<p>Note que estamos buscando una recta de la forma</p>
+<p><span class="math display">\[y=\alpha x+\beta\]</span></p>
+<p>que aproxime los datos.</p>
+</section>
+<section class="slide level2 center">
+
+<p><strong>Encontremos el mejor ajuste</strong></p>
+<p><span class="math display">\[\alpha\begin{bmatrix}
+3\\4\\5\\6\\7\\8\\9\\10\\11\\12
+\end{bmatrix}+\beta\begin{bmatrix}1\\1\\1\\1\\1\\1\\1\\1\\1\\1\end{bmatrix}\approx\begin{bmatrix}4.5\\5.5\\5.7 \\6.6\\7.0\\7.7\\8.5\\8.7\\9.5\\9.7\end{bmatrix}\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>Podemos reescribir el sistema como</p>
+<p><span class="math display">\[\alpha X +\beta Y =b\]</span></p>
+<p>Donde <span class="math inline">\(X=(3,4,5,6,7,8,9,10,11,12)\)</span>, <span class="math inline">\(Y=(1,1,1,1,1,1,1,1,1,1)\)</span> y <span class="math inline">\(b=(4.5,5.5,5.7,6.6,7.0,7.7,8.5,8.7,9.5,9.7)\)</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>De esta forma encontramos que el problema se resuelve encontrando la proyección de <span class="math inline">\(b\)</span> en el subespacio generado por <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
+</section>
+<section class="slide level2 center">
+
+<p>Lo cual es equivalente de resolver el sistema de ecuaciones lineales</p>
+<p><span class="math display">\[\begin{cases}
+\langle X,X\rangle \alpha + \langle X,Y\rangle \beta =\langle X,b \rangle\\
+\langle Y,X\rangle \alpha + \langle Y,Y\rangle \beta =\langle Y,b \rangle
+\end{cases}\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><strong>Ejercicio</strong></p>
+<p>Si Escribimos el problema de forma matricial</p>
+<p><span class="math display">\[\begin{bmatrix}   
+3 &amp; 1\\
+4 &amp; 1\\
+5 &amp; 1\\
+6 &amp; 1\\
+7 &amp; 1\\
+8 &amp; 1\\
+9 &amp; 1\\
+10 &amp; 1\\
+11 &amp; 1\\
+12 &amp; 1\end{bmatrix}\begin{bmatrix}\alpha\\ \beta\end{bmatrix}\approx\begin{bmatrix}4.5\\5.5\\5.7\\6.6\\7.0\\7.7\\8.5\\8.7\\9.5\\9.7\end{bmatrix}\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>como</p>
+<p><span class="math display">\[Ax=b\]</span></p>
+<p>Muestre el sistema de ecuaciones lineales</p>
+<p><span class="math display">\[\begin{cases}
+\langle X,X\rangle \alpha + \langle X,Y\rangle \beta =\langle X,b \rangle\\
+\langle Y,X\rangle \alpha + \langle Y,Y\rangle \beta =\langle Y,b \rangle
+\end{cases}\]</span></p>
+<p>es equivalente a resolver el sistema</p>
+<p><span class="math inline">\(A^TAx=A^Tb\)</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><strong>Ejercicio</strong></p>
+<p>los sgiguientes datos representan los contaminantes atmosféricos <span class="math inline">\(y_i\)</span> (respecto con cierta norma de calidad del aire) en intervalos de media hora <span class="math inline">\(t_i\)</span></p>
+
+<img data-src="figures/ejercicio_1.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+<p>La siguiente gráfica muestra la evolución de los contaminantes en el tiempo,</p>
+
+<img data-src="figures/ejercicio_1f.png" class="r-stretch"><p>por conjeturas podemos ver que los datos se ajustan a un polinomio cudarático de la forma</p>
+<p><span class="math display">\[y(t)=a_2 t^2+a_1 t+a_0\]</span></p>
+<p><strong>Encuentre los coeficientes <span class="math inline">\(a_2\)</span>, <span class="math inline">\(a_1\)</span> y <span class="math inline">\(a_0\)</span> que mejor ajustan los datos</strong></p>
+</section>
+<section class="slide level2 center">
+
+<p><strong>Ejercicio 2</strong></p>
+<p>Los datos periódicos requieren modelos periódicos. Las temperaturas del aire exterior, por ejemplo, siguen ciclos en numerosas escalas de tiempo, incluidos los ciclos diarios y anuales, que están gobernados por la rotación de la Tierra y la revolución de la Tierra alrededor del Sol. Como primer ejemplo, los datos de temperatura por hora se ajustan a senos y cosenos.</p>
+</section>
+<section class="slide level2 center">
+
+<p>Ajusta las temperaturas registradas en Washington, D.C., el 1 de enero de 2001, como se muestra en la siguiente tabla, a un modelo periódico:</p>
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="figures/ejercicio_2.png" width="300" class="r-stretch"></section>
+<section class="slide level2 center">
+
+<p>Elegimos el modelo</p>
+<p><span class="math display">\[y=c_1+c_2cos⁡(2\pi t)+c_3sin⁡(2\pi t)\]</span></p>
+<p>para coincidir con el hecho de que la temperatura es aproximadamente periódica con un período de 24 horas, al menos en ausencia de movimientos de temperatura a largo plazo. El modelo utiliza esta información fijando el período exactamente en un día, donde estamos usando días como unidades para <span class="math inline">\(t\)</span>. La variable <span class="math inline">\(t\)</span> se presenta en estas unidades en la tabla.</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 

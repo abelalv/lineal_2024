@@ -1,0 +1,68 @@
+---
+title: "Taller sobre Espacios Vectoriales"
+author: "Abel Alvarez"
+date: "05/09/2024"
+output:
+  pdf_document:
+    keep_tex: False
+fontsize: 12pt
+geometry: margin=1in
+pagestyle: headings
+
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+
+
+
+
+---
+
+# Introducción
+
+1. Defina los siguientes conceptos  y de un ejemplo de cada uno de ellos:
+    a. Espacio vectorial.
+    b. Subespacio vectorial.
+    c. Independencia y dependencia lineal.
+    d. Base de un espacio vectorial.
+    e. Dimensión de un espacio vectorial.
+    f. Espacio vectorial de dimensión finita e infinita.
+    g. Espacio generado.
+
+
+2. Sea el conjunto de vectores 
+
+$$v_1=\begin{bmatrix}
+1\\
+2\\
+3\end{bmatrix}, v_2=\begin{bmatrix}
+2\\
+3\\
+4\end{bmatrix}, v_3=\begin{bmatrix}
+3\\
+4\\
+5\end{bmatrix}$$
+
+a. ¿Son linealmente independientes?
+b. ¿Podría ser una base para $\mathbb{R}^3$?
+
+4. Sea el subconjunto $W=\{\textbf{w}=(x,y)\in \mathbb{R}^2: x\geq 0 \text{ y } y\geq 0\}$ de $\mathbb{R}^2$. ¿Es $W$ un subespacio vectorial de $\mathbb{R}^2$?
+
+5. ¿Cuáles de los siguientes subconjuntos de $R^3$ son subespacios de $\mathbb{R}^3$? El conjunto de todos los vectores de la forma
+a.  $(a, b, 2)$
+b. $(a, b, c)$, donde $c = a + b$
+c.  $(a, b, c)$, donde $c > 0$
+
+6. Escriba si la siguiente afirmación es verdadera o falsa y justifique su respuesta
+
+Si el sistema de ecuaciones 
+
+$$\begin{cases}
+x+2y+3z=0\\
+2x+3y+4z=0\\
+3x+4y+5z=1
+\end{cases}$$
+
+Entonces los vectores columna de la matriz de coeficientes forma una base de $\mathbb{R}^3$
+
+7. 

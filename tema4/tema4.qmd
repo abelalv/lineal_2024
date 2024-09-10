@@ -12,6 +12,7 @@ format:
     toc-title: "Tabla de Contenidos"
     slide-level: 2    # Nivel de encabezado que inicia una nueva diapositiva
     center: true      # Centrar contenido en las diapositivas
+
 ---
 
 **Objetivo**
@@ -149,7 +150,7 @@ $$\begin{bmatrix}4\\0\\5\end{bmatrix}\neq x\begin{bmatrix}1\\2\\3\end{bmatrix}+y
 
 
 * **¿Cuál es el subespacio generado por las columnas de $A$?**
-* **¿Cuál es la dimensión de este subespacio?**
+* **¿Cuál es la dimensión de ste subespacio?**
 * **Puedo representar gráficamente este fenómeno**
 
 
@@ -287,3 +288,212 @@ Sea $\{v_1,v_2\}$ vectores linealmente independientes en $\mathbb{R}^3$.
 
 
 ---
+
+
+**Ejemplo**
+
+Recordemos que el sistema de ecuaciones lineales
+
+
+$$\begin{cases}
+x+2y=4\\
+2x+3y=0\\
+3x-y=5
+\end{cases}$$
+
+Note que el vector $b$ no es una combinación lineal de las columnas de la matriz de coeficientes.
+
+$$\begin{bmatrix}4\\0\\5\end{bmatrix}\neq x\begin{bmatrix}1\\2\\3\end{bmatrix}+y\begin{bmatrix}2\\3\\-1\end{bmatrix}$$
+
+---
+
+
+Recordemos que podemos generar el subespacio $W$ con los vectores $v_1=(1,2,3)$ y $v_2=(2,3,-1)$.
+
+**Note que $b$ no es una combinación lineal de $v_1$ y $v_2$**
+
+Lo que queremos encontrar es el vector $z\in W$ que sea la mejor aproximación a $b$ en $W$.
+
+luego 
+
+$$z=\alpha v_1+\beta v_2$$
+
+---
+
+**Note** que este procedimiento se llama proyección de $b$ en $W$ y se simboliza como
+
+$$\text{proy}_W(b)$$
+
+
+---
+
+
+$$\alpha v_1+\beta v_2=b$$
+si multiplicamos, usando el producto punto, la igualdad por un vector $v_1$ que sea sea perpendicular  
+y que 
+
+$$z+R=b$$
+
+$$\langle v_1,\alpha v_1+\beta v_2\rangle + \langle v_1,R\rangle =\langle v_1,b \rangle$$
+
+---
+
+
+usando las propiedades del producto punto, obtenemos
+
+$$\alpha \langle v_1,v_1\rangle + \beta \langle v_1,v_2\rangle =\langle v_1,b \rangle$$
+
+De forma similar multiplicando por $v_2$ obtenemos
+$$\langle v_2,\alpha v_1+\beta v_2\rangle + \langle v_1,R\rangle =\langle v_2,b \rangle$$
+
+$$\alpha \langle v_2,v_1\rangle + \beta \langle v_2,v_2\rangle =\langle v_2,b \rangle$$
+
+---
+
+
+De esta forma tenemos un sistema de ecuaciones lineales
+
+$$\begin{cases}
+\langle v_1,v_1\rangle \alpha + \langle v_1,v_2\rangle \beta =\langle v_1,b \rangle\\
+\langle v_2,v_1\rangle \alpha + \langle v_2,v_2\rangle \beta =\langle v_2,b \rangle
+\end{cases}$$
+
+
+**Encuentre los valores de $\alpha$ y $\beta$**
+
+---
+
+**Ejemplo**
+
+En la fabricación del producto XXX, la cantidad de compuesto beta presente es controlada por la cantidad del ingrediente alfa utilizada en el proceso. Al fabricar un galón de XXX, se registraron la cantidad de alfa usada y la cantidad de beta presente, obteniéndose los siguientes datos
+
+
+![](figures/mcm_1.png)
+
+---
+
+![](figures/mcm_2.png)
+
+---
+
+Note que estamos buscando una recta de la forma 
+
+$$y=\alpha x+\beta$$
+
+que aproxime los datos.
+
+---
+
+**Encontremos el mejor ajuste**
+
+$$\alpha\begin{bmatrix}
+3\\4\\5\\6\\7\\8\\9\\10\\11\\12
+\end{bmatrix}+\beta\begin{bmatrix}1\\1\\1\\1\\1\\1\\1\\1\\1\\1\end{bmatrix}\approx\begin{bmatrix}4.5\\5.5\\5.7 \\6.6\\7.0\\7.7\\8.5\\8.7\\9.5\\9.7\end{bmatrix}$$
+
+---
+
+Podemos reescribir el sistema como 
+
+$$\alpha X +\beta Y =b$$
+
+Donde $X=(3,4,5,6,7,8,9,10,11,12)$, $Y=(1,1,1,1,1,1,1,1,1,1)$ y $b=(4.5,5.5,5.7,6.6,7.0,7.7,8.5,8.7,9.5,9.7)$
+
+---
+
+De esta forma encontramos que el problema se resuelve encontrando la proyección de $b$ en el subespacio generado por $X$ y $Y$.
+
+
+---
+
+Lo cual es equivalente de resolver el sistema de ecuaciones lineales
+
+$$\begin{cases}
+\langle X,X\rangle \alpha + \langle X,Y\rangle \beta =\langle X,b \rangle\\
+\langle Y,X\rangle \alpha + \langle Y,Y\rangle \beta =\langle Y,b \rangle
+\end{cases}$$
+
+
+---
+
+**Ejercicio**
+
+Si Escribimos el problema de forma matricial 
+
+$$\begin{bmatrix}   
+3 & 1\\
+4 & 1\\
+5 & 1\\
+6 & 1\\
+7 & 1\\
+8 & 1\\
+9 & 1\\
+10 & 1\\
+11 & 1\\
+12 & 1\end{bmatrix}\begin{bmatrix}\alpha\\ \beta\end{bmatrix}\approx\begin{bmatrix}4.5\\5.5\\5.7\\6.6\\7.0\\7.7\\8.5\\8.7\\9.5\\9.7\end{bmatrix}$$
+
+--- 
+
+como 
+
+$$Ax=b$$
+
+Muestre  el sistema de ecuaciones lineales
+
+$$\begin{cases}
+\langle X,X\rangle \alpha + \langle X,Y\rangle \beta =\langle X,b \rangle\\ 
+\langle Y,X\rangle \alpha + \langle Y,Y\rangle \beta =\langle Y,b \rangle
+\end{cases}$$
+
+es equivalente a resolver el sistema 
+
+$A^TAx=A^Tb$
+
+
+---
+
+**Ejercicio**
+
+
+los sgiguientes datos representan los contaminantes atmosféricos $y_i$ (respecto con cierta norma de calidad del aire) en intervalos de media hora $t_i$
+
+![](figures/ejercicio_1.png)
+
+---
+
+La siguiente gráfica muestra la evolución de los contaminantes en el tiempo,
+
+![](figures/ejercicio_1f.png)
+
+por conjeturas podemos ver que los datos se ajustan a un
+polinomio cudarático de la forma
+
+$$y(t)=a_2 t^2+a_1 t+a_0$$
+
+**Encuentre los coeficientes $a_2$, $a_1$ y $a_0$ que mejor ajustan los datos**
+
+---
+
+**Ejercicio 2**
+
+Los datos periódicos requieren modelos periódicos. Las temperaturas del aire exterior, por ejemplo, siguen ciclos en numerosas escalas de tiempo, incluidos los ciclos diarios y anuales, que están gobernados por la rotación de la Tierra y la revolución de la Tierra alrededor del Sol. Como primer ejemplo, los datos de temperatura por hora se ajustan a senos y cosenos.
+
+---
+
+Ajusta las temperaturas registradas en Washington, D.C., el 1 de enero de 2001, como se muestra en la siguiente tabla, a un modelo periódico:
+
+
+---
+
+
+![](figures/ejercicio_2.png){width=300}
+
+---
+
+Elegimos el modelo 
+
+$$y=c_1+c_2cos⁡(2\pi t)+c_3sin⁡(2\pi t)$$
+
+para coincidir con el hecho de que la temperatura es aproximadamente periódica con un período de 24 horas, al menos en ausencia de movimientos de temperatura a largo plazo. El modelo utiliza esta información fijando el período exactamente en un día, donde estamos usando días como unidades para $t$. La variable $t$ se presenta en estas unidades en la tabla.
+
+
+
