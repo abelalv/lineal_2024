@@ -499,4 +499,71 @@ $$
 
 - La **dimensión** del espacio total es 3, y se cumple la relación $\text{dim}(\text{Ker}(T)) + \text{dim}(\text{Rango}(T)) = \text{dim}(\mathbb{R}^3)$.
 
+<<<<<<< HEAD
 ---
+=======
+## Cambio de base
+
+El **cambio de base** es un concepto fundamental en álgebra lineal que permite expresar vectores y transformaciones lineales en diferentes sistemas de coordenadas. Al realizar un cambio de base, transformamos las coordenadas de los vectores y las matrices de las transformaciones lineales de una base a otra.
+
+### Ejemplo de Cambio de Base para una Transformación Lineal
+
+Consideremos una transformación lineal $T: \mathbb{R}^2 \to \mathbb{R}^2$ definida por la multiplicación por una matriz $A$. Queremos expresar esta transformación en una nueva base diferente a la base estándar.
+
+#### Paso 1: Definir la transformación lineal
+
+Supongamos que la transformación $T$ está definida por la matriz $A$ en la base estándar $\mathcal{B} = \{ \mathbf{e}_1, \mathbf{e}_2 \}$, donde:
+
+$$
+A = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}
+$$
+
+Esto significa que para cualquier vector $\mathbf{v} = \begin{pmatrix} x \\ y \end{pmatrix}$, la transformación se define como:
+
+$$
+T(\mathbf{v}) = A \mathbf{v}
+$$
+
+#### Paso 2: Definir una nueva base
+
+Supongamos que cambiamos a una nueva base $\mathcal{B}' = \{ \mathbf{b}_1, \mathbf{b}_2 \}$, donde los vectores de la nueva base están dados por:
+
+$$
+\mathbf{b}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad \mathbf{b}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+$$
+
+Queremos encontrar la matriz de la transformación $T$ en esta nueva base $\mathcal{B}'$.
+
+#### Paso 3: Encontrar la matriz de cambio de base
+
+La **matriz de cambio de base** $P$ es la matriz cuyas columnas son las coordenadas de los nuevos vectores base $\mathbf{b}_1$ y $\mathbf{b}_2$ en términos de la base estándar:
+
+$$
+P = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+$$
+
+#### Paso 4: Transformar la matriz de la transformación lineal
+
+Para encontrar la matriz de la transformación en la nueva base, utilizamos la siguiente fórmula:
+
+$$
+A' = P^{-1} A P
+$$
+
+Donde:
+- $A$ es la matriz de la transformación en la base estándar,
+- $P$ es la matriz de cambio de base,
+- $A'$ es la matriz de la transformación en la nueva base $\mathcal{B}'$.
+
+Primero, calculamos la inversa de $P$. Dado que:
+
+$$
+P = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+$$
+
+La inversa de $P$ es:
+
+$$
+P^{-1} = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+$$
+>>>>>>> 6d424a1 (cambio de base)
