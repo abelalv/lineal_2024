@@ -1,0 +1,70 @@
+---
+title: ""
+output:
+  pdf:
+---
+
+\section*{Encriptación de Mensajes con Transformaciones Lineales}
+
+\textbf{Objetivo:} 
+En esta actividad, los estudiantes aprenderán a encriptar y desencriptar mensajes utilizando matrices y transformaciones lineales.
+
+\textbf{Instrucciones:}
+
+Sigue los pasos a continuación para encriptar un mensaje.
+
+\textbf{Paso 1: Asignación de Letras a Números}
+
+Asocia cada letra del alfabeto a un número según la siguiente tabla:
+
+
+| Letra | A | B | C | D | E | F | G | H | I | J | K | L | M |
+|-------|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Número| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10| 11| 12| 13|
+
+| Letra | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+|-------|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Número| 14| 15| 16| 17| 18| 19| 20| 21| 22| 23| 24| 25| 26|
+
+
+
+\textbf{Paso 2: Definir la Matriz de Transformación}
+
+Elige una matriz cuadrada invertible para encriptar el mensaje. Por ejemplo, puedes usar la siguiente matriz:
+
+$$
+A = \begin{pmatrix}
+2 & 3 \\
+1 & 2
+\end{pmatrix}
+$$
+
+\textbf{Paso 3: Dividir el Mensaje en Vectores}
+
+Convierte el mensaje a un vector de números usando la tabla del paso 1. Si el mensaje tiene más letras que el tamaño de la matriz, divide el vector en bloques del tamaño correspondiente a la matriz.
+
+\textbf{Paso 4: Aplicar la Transformación Lineal}
+
+Multiplica cada bloque de números por la matriz de transformación. Por ejemplo, si tu matriz es de tamaño $2 \times 2$, multiplica cada par de números por la matriz:
+
+$$
+A \cdot \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}
+$$
+
+\textbf{Paso 5: Enviar el Mensaje Encriptado}
+
+El resultado de cada multiplicación será el mensaje encriptado, que consistirá en una serie de vectores. Envía estos vectores como el mensaje encriptado.
+
+\textbf{Paso 6: Desencriptación}
+
+Para desencriptar el mensaje, el receptor debe multiplicar cada vector encriptado por la matriz inversa de $A$, denotada como $A^{-1}$:
+
+$$
+A^{-1} \cdot \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}
+$$
+
+De esta forma, recuperará el mensaje original.
+
+\textbf{Paso 7: Convertir de Números a Letras}
+
+Una vez que los números hayan sido desencriptados, utiliza la tabla del paso 1 para convertir los números de vuelta a letras y recuperar el mensaje original.
