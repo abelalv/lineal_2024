@@ -1,7 +1,20 @@
-title: "Guía de Transformaciones Rígidas en el Plano"
-format: pdf
-jupyter: python3
 ---
+title: "Transformaciones lineales"
+subtitle: '$\mathbb{R}^n$'
+date: " "
+format:
+  revealjs:
+    theme: simple    # Puedes cambiar el tema (simple, black, white, etc.)
+    slide-number: true # Mostrar el número de diapositiva
+    transition: slide # Tipo de transición (slide, fade, etc.)
+    incremental: true # Activar aparición progresiva de los puntos
+    toc: true         # Mostrar tabla de contenidos
+    toc-title: "Tabla de Contenidos"
+    slide-level: 2    # Nivel de encabezado que inicia una nueva diapositiva
+    center: true      # Centrar contenido en las diapositivas
+
+---
+
 
 ## Introducción
 
@@ -12,7 +25,7 @@ En este documento, exploraremos las transformaciones rígidas en el plano. Las t
 La traslación desplaza una figura en el plano sin cambiar su orientación.
 
 ```{python}
-
+#| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -37,6 +50,7 @@ plt.show()
 # Rotación
 
 ```{python}
+#| echo: false
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -86,6 +100,7 @@ plt.show()
 
 
 ```{python}
+#| echo: false
 def reflect(points, axis='x'):
     if axis == 'x':
         reflection_matrix = np.array([[1, 0], [0, -1]])
@@ -112,6 +127,7 @@ plt.show()
 
 
 ```{python}
+#| echo: false
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -175,24 +191,14 @@ reflection_axis = 'x'  # Reflexión sobre el eje x
 
 # 1. Aplicar rotación
 rotated_triangle = apply_rotation(triangle, angle)
-print("Matriz de Rotación:")
-print(rotation_matrix(angle))
-print("Coordenadas del Triángulo después de la Rotación:")
-print(rotated_triangle)
+
 
 # 2. Aplicar traslación
 translated_triangle = apply_translation(rotated_triangle, translation_vector)
-print("\nMatriz de Traslación:")
-print(translation_matrix(translation_vector))
-print("Coordenadas del Triángulo después de la Traslación:")
-print(translated_triangle)
+
 
 # 3. Aplicar reflexión
 reflected_triangle = apply_reflection(translated_triangle, reflection_axis)
-print("\nMatriz de Reflexión sobre el eje", reflection_axis + ":")
-print(reflection_matrix(reflection_axis))
-print("Coordenadas del Triángulo después de la Reflexión:")
-print(reflected_triangle)
 
 # 4. Composición de todas las transformaciones
 # Comenzamos con la matriz de identidad
@@ -206,8 +212,7 @@ rotation_homogeneous[:2, :2] = rotation_matrix(angle)
 composite_matrix = np.dot(translation_matrix(translation_vector), rotation_homogeneous)
 
 # Impresión de la matriz compuesta (Rotación seguida de Traslación)
-print("\nMatriz Compuesta (Rotación seguida de Traslación):")
-print(composite_matrix)
+
 
 # La reflexión no se puede representar directamente en coordenadas homogéneas,
 # así que la aplicamos por separado en las coordenadas finales.
@@ -243,32 +248,58 @@ plt.show()
 
 Una **transformación lineal** es una función entre dos espacios vectoriales que preserva las operaciones básicas de suma de vectores y multiplicación por un escalar. Formalmente, si $T: V \to W$ es una transformación lineal entre dos espacios vectoriales $V$ y $W$, entonces para todos los vectores $\mathbf{u}, \mathbf{v} \in V$ y todo escalar $c$, se cumple que:
 
-1. $T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$ (preserva la suma de vectores)
-2. $T(c \mathbf{u}) = c T(\mathbf{u})$ (preserva la multiplicación por un escalar)
++ $T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$ (preserva la suma de vectores)
+
++ $T(c \mathbf{u}) = c T(\mathbf{u})$ (preserva la multiplicación por un escalar)
+
+---
 
 Esto significa que una transformación lineal no altera la estructura lineal de los espacios vectoriales involucrados. Ejemplos comunes de transformaciones lineales incluyen rotaciones, reflexiones, escalas y proyecciones en el plano o en el espacio tridimensional.
 
+--- 
 
 El **dominio** de una transformación lineal $T: V \to W$ es el conjunto de todos los vectores en el espacio vectorial $V$ sobre los cuales $T$ está definida. Es decir, es el conjunto de entrada de la función.
 
-El **rango** de una transformación lineal $T$ es el conjunto de todos los vectores en el espacio vectorial $W$ que pueden ser obtenidos como la imagen de algún vector en $V$. Formalmente, el rango de $T$ es $ \text{Im}(T) = \{ T(\mathbf{v}) : \mathbf{v} \in V \} $.
+---
 
-El **núcleo** (o kernel) de una transformación lineal $T$ es el conjunto de todos los vectores en $V$ que son mapeados al vector cero en $W$. Es decir, el núcleo de $T$ es $ \text{Ker}(T) = \{ \mathbf{v} \in V : T(\mathbf{v}) = \mathbf{0} \} $.
+El **rango** de una transformación lineal $T$ es el conjunto de todos los vectores en el espacio vectorial $W$ que pueden ser obtenidos como la imagen de algún vector en $V$. Formalmente, el rango de $T$ es $\text{Im}(T) = \{ T(\mathbf{v}) : \mathbf{v} \in V \}$.
 
+---
+
+
+
+El **núcleo** (o kernel) de una transformación lineal $T$ es el conjunto de todos los vectores en $V$ que son mapeados al vector cero en $W$. Es decir, el núcleo de $T$ es $\text{Ker}(T) = \{ \mathbf{v} \in V : T(\mathbf{v}) = \mathbf{0} \}$
 El rango y el núcleo son importantes porque nos permiten entender las propiedades fundamentales de una transformación lineal, como su inyectividad y sobreyectividad.
+
+
+---
+
+## Teorema del rango-núcleo
+
+El **teorema del rango-núcleo** establece una relación fundamental entre el rango y el núcleo de una transformación lineal. Para una transformación lineal $T: V \to W$ entre espacios vectoriales finito-dimensionales, el teorema del rango-núcleo establece que:
+
+$$
+dim(\text{Ker}(T)) + dim(\text{Rango}(T)) = dim(V)
+$$
+
+
+
+
 
 
 # Teorema
 
 Toda transformación lineal $T: V \to W$ entre espacios vectoriales finito-dimensionales puede ser representada por una matriz. Dicho de otra forma, para cada transformación lineal $T$ existe una matriz $A$ tal que $T(\mathbf{v}) = A \mathbf{v}$ para todo $\mathbf{v} \in V$.
 
+---
 
 
 ### Ejemplo:
 
 Considera una transformación lineal $T: \mathbb{R}^2 \to \mathbb{R}^2$ que rota los vectores en $\mathbb{R}^2$ en 90 grados en sentido antihorario.
 
-#### Paso 1: Definir la transformación lineal
+
+### Paso 1: Definir la transformación lineal
 
 Una transformación lineal $T$ se define por su acción sobre los vectores del espacio vectorial. Si $\mathbf{v} = \begin{pmatrix} x \\ y \end{pmatrix}$ es un vector en $\mathbb{R}^2$, la transformación $T$ rota este vector 90 grados en sentido antihorario. La fórmula general para rotar un vector 90 grados en sentido antihorario es:
 
@@ -276,7 +307,9 @@ $$
 T\left( \begin{pmatrix} x \\ y \end{pmatrix} \right) = \begin{pmatrix} -y \\ x \end{pmatrix}
 $$
 
-#### Paso 2: Encontrar la matriz de transformación asociada
+---
+
+### Paso 2: Encontrar la matriz de transformación asociada
 
 Para encontrar la **matriz de transformación asociada** a $T$, necesitamos saber cómo actúa $T$ sobre las **bases estándar** de $\mathbb{R}^2$. Las bases estándar en $\mathbb{R}^2$ son los vectores:
 
@@ -284,10 +317,13 @@ $$
 \mathbf{e}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad \mathbf{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
 $$
 
+---
+
 Ahora, aplicamos la transformación $T$ a cada uno de estos vectores base:
 
-- $T(\mathbf{e}_1) = T\left( \begin{pmatrix} 1 \\ 0 \end{pmatrix} \right) = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$
-- $T(\mathbf{e}_2) = T\left( \begin{pmatrix} 0 \\ 1 \end{pmatrix} \right) = \begin{pmatrix} -1 \\ 0 \end{pmatrix}$
+$T(\mathbf{e}_1) = T\left( \begin{pmatrix} 1 \\ 0 \end{pmatrix} \right) = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$
+
+$T(\mathbf{e}_2) = T\left( \begin{pmatrix} 0 \\ 1 \end{pmatrix} \right) = \begin{pmatrix} -1 \\ 0 \end{pmatrix}$
 
 La matriz de transformación asociada a $T$, que denotamos por $[T]$, tiene como columnas las imágenes de los vectores de la base estándar bajo la transformación $T$. Es decir:
 
@@ -295,11 +331,16 @@ $$
 [T] = \begin{pmatrix} T(\mathbf{e}_1) & T(\mathbf{e}_2) \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
 $$
 
+---
+
 Por lo tanto, la matriz de transformación asociada a la rotación de 90 grados es:
 
 $$
 [T] = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
 $$
+
+
+---
 
 #### Paso 3: Verificación
 
@@ -310,6 +351,9 @@ $$
 $$
 
 Lo cual es exactamente el resultado esperado de rotar el vector $\mathbf{v}$ en 90 grados.
+
+
+---
 
 ### Resumen:
 
@@ -322,11 +366,17 @@ $$
 
 Este es un ejemplo de cómo definir una transformación lineal y encontrar la matriz de transformación asociada a dicha transformación.
 
-Para un ejemplo de una transformación lineal con un núcleo de dimensión mayor o igual a uno, podemos usar una transformación de proyección. Esta proyección envía ciertos vectores al vector cero, lo que garantiza que el núcleo tiene al menos una dimensión mayor o igual a uno.
+
+
+
+---
 
 ### Ejemplo: Proyección sobre el eje $x$
 
 Consideremos la transformación lineal $T: \mathbb{R}^3 \to \mathbb{R}^2$ definida por la proyección de los vectores de $\mathbb{R}^3$ en el plano $xy$. Es decir, la transformación toma un vector $(x, y, z)$ y lo proyecta en el espacio $\mathbb{R}^2$, descartando la tercera coordenada $z$.
+
+
+---
 
 #### Paso 1: Definir la transformación lineal
 
@@ -338,6 +388,9 @@ $$
 
 En este caso, la transformación elimina la componente $z$, lo que significa que cualquier componente en la dirección del eje $z$ se mapea al vector cero. Esto sugiere que el núcleo no es trivial.
 
+
+---
+
 #### Paso 2: Encontrar la matriz de transformación asociada
 
 La matriz de transformación asociada a $T$ en términos de coordenadas se obtiene considerando cómo actúa sobre las bases estándar de $\mathbb{R}^3$:
@@ -346,11 +399,17 @@ La matriz de transformación asociada a $T$ en términos de coordenadas se obtie
 - $T \left( \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right) = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$
 - $T \left( \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \right) = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$
 
+
+---
+
 La matriz de transformación asociada a $T$ es:
 
 $$
 [T] = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}
 $$
+
+
+---
 
 #### Paso 3: Encontrar el núcleo de la transformación
 
@@ -359,6 +418,8 @@ El núcleo de una transformación lineal es el conjunto de todos los vectores qu
 $$
 T\left( \begin{pmatrix} x \\ y \\ z \end{pmatrix} \right) = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
 $$
+
+---
 
 Resolvemos el sistema:
 
@@ -372,13 +433,19 @@ $$
 x = 0, \quad y = 0
 $$
 
+---
+
 Esto implica que el núcleo de $T$ consiste en todos los vectores de la forma:
 
 $$
 \text{Ker}(T) = \left\{ \begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix} : z \in \mathbb{R} \right\}
 $$
 
-Por lo tanto, el núcleo de $T$ es el subespacio unidimensional generado por los vectores de la forma $ \begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix}$. La dimensión del núcleo es 1.
+
+
+Por lo tanto, el núcleo de $T$ es el subespacio unidimensional generado por los vectores de la forma $\begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix}$. La dimensión del núcleo es 1.
+
+---
 
 #### Paso 4: Encontrar el rango de la transformación
 
@@ -388,9 +455,14 @@ $$
 T\left( \begin{pmatrix} x \\ y \\ z \end{pmatrix} \right) = \begin{pmatrix} x \\ y \end{pmatrix}
 $$
 
-Esto significa que el rango de $T$ es todo $\mathbb{R}^2$, ya que cualquier vector $ \begin{pmatrix} x \\ y \end{pmatrix}$ puede ser alcanzado por algún vector en $\mathbb{R}^3$.
+---
+
+Esto significa que el rango de $T$ es todo $\mathbb{R}^2$, ya que cualquier vector $\begin{pmatrix} x \\ y \end{pmatrix}$ puede ser alcanzado por algún vector en $\mathbb{R}^3$.
 
 Por lo tanto, la dimensión del rango es 2.
+
+
+---
 
 #### Paso 5: Verificar la dimensión del espacio total
 
@@ -408,6 +480,8 @@ $$
 
 Esto verifica que nuestras dimensiones del núcleo y del rango son correctas.
 
+---
+
 ### Resumen:
 
 - La **transformación lineal** $T$ proyecta los vectores de $\mathbb{R}^3$ en $\mathbb{R}^2$ eliminando la tercera componente.
@@ -417,7 +491,12 @@ $$
 [T] = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}
 $$
 
-- El **núcleo** de $T$ es el subespacio unidimensional generado por $ \begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix}$, y su dimensión es 1.
+---
+
+- El **núcleo** de $T$ es el subespacio unidimensional generado por $\begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix}$, y su dimensión es 1.
+
 - El **rango** de $T$ es todo $\mathbb{R}^2$, y su dimensión es 2.
+
 - La **dimensión** del espacio total es 3, y se cumple la relación $\text{dim}(\text{Ker}(T)) + \text{dim}(\text{Rango}(T)) = \text{dim}(\mathbb{R}^3)$.
 
+---
