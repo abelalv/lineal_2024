@@ -1,0 +1,49 @@
+---
+title: "Taller Algebra lineal"
+format: pdf
+geometry: margin=2cm
+---
+
+
+
+1. Sea $T: \mathbb{R}^2 \to \mathbb{R}^2$ definida por $T(x, y) = (x + y, 2y)$. ¿Es $T$ una transformación lineal? Justifica tu respuesta.
+
+2. Sea $T: \mathbb{R}^2 \to \mathbb{R}^3$ definida por $T(x, y) = (x - y, 2x + 3y, 4x)$. Determina si $T$ es una transformación lineal.
+
+3. Sea $T: \mathbb{R}^3 \to \mathbb{R}^2$ definida por $T(x, y, z) = (2x + y, y^2 + z)$. Determina si $T$ es una transformación lineal.
+
+4. Encuentra la matriz de la transformación lineal $T: \mathbb{R}^2 \to \mathbb{R}^2$ definida por $T(x, y) = (3x + 4y, -x + 2y)$.
+
+5. Sea $T: \mathbb{R}^3 \to \mathbb{R}^3$ tal que $T(x, y, z) = (2x - y + z, -x + 4y, 3x + 5z)$. Encuentra la matriz de $T$.
+
+6. Encuentra la matriz de la transformación lineal $T: \mathbb{R}^2 \to \mathbb{R}^3$ tal que $T(x, y) = (x + 2y, -3x + 4y, x - y)$.
+
+
+7. Considera una transformación lineal que realiza una combinación de una rotación y una reflexión en el plano. La matriz de rotación es 
+$$ 
+R(\theta) = \begin{pmatrix} 
+\cos(\theta) & -\sin(\theta) \\ 
+\sin(\theta) & \cos(\theta) 
+\end{pmatrix} 
+$$ 
+y la matriz de reflexión respecto al eje $y$ es 
+$$ 
+\begin{pmatrix} 
+-1 & 0 \\ 
+0 & 1 
+\end{pmatrix}. 
+$$ 
+Encuentra la matriz compuesta que realiza primero una rotación de $60^\circ$ y luego una reflexión respecto al eje $y$. Aplica la transformación al vector $(1, 2)$ y calcula su imagen.
+
+
+8. En una aplicación económica, se utiliza una transformación lineal para proyectar los ingresos de una empresa en dos sectores diferentes. Si la transformación está definida por $T(x, y) = (2x + 3y, 4x + y)$, donde $x$ es la cantidad invertida en el sector 1 y $y$ es la cantidad invertida en el sector 2, determina la proyección de ingresos para una inversión de $1000 en el sector 1 y $2000 en el sector 2.
+
+9. En gráficos por computadora, una transformación de cizallamiento en el espacio tridimensional puede ser representada por la matriz
+$$ 
+\begin{pmatrix} 
+1 & k_1 & k_2 \\ 
+0 & 1 & k_3 \\ 
+0 & 0 & 1 
+\end{pmatrix}. 
+$$ 
+Si $k_1 = 1$, $k_2 = -1$, y $k_3 = 2$, encuentra la imagen del punto $(1, 2, 3)$ bajo esta transformación. Luego, interpreta cómo esta transformación afecta la geometría de los objetos en un sistema de gráficos tridimensionales.
