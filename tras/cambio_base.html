@@ -8,7 +8,7 @@
 <link href="cambio_base_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="cambio_base_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="cambio_base_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.45">
+  <meta name="generator" content="quarto-1.5.55">
 
   <title>Cambio de Base: Teoría y Ejemplo</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -336,37 +336,39 @@
 <h1>Introducción</h1>
 <p>El <strong>cambio de base</strong> es una técnica fundamental en álgebra lineal. Permite representar vectores y sistemas de ecuaciones en diferentes sistemas de coordenadas, facilitando la resolución de problemas en varias áreas, desde geometría hasta aprendizaje automático.</p>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="teoría-del-cambio-de-base" class="title-slide slide level1 center">
-<h1>Teoría del Cambio de Base</h1>
+<section id="teoría-del-cambio-de-base" class="slide level2">
+<h2>Teoría del Cambio de Base</h2>
 <p>Un vector puede ser representado en diferentes bases. Matemáticamente, si tenemos un vector <span class="math inline">\(\mathbf{v}\)</span> en una base <span class="math inline">\(\mathcal{B}\)</span>, y deseamos cambiar a una nueva base <span class="math inline">\(\mathcal{C}\)</span>, podemos usar una matriz de transformación.</p>
-</section>
 <h3 id="definición">Definición:</h3>
 <p>Si <span class="math inline">\(\mathbf{B}\)</span> es la matriz de cambio de base de <span class="math inline">\(\mathcal{B}\)</span> a <span class="math inline">\(\mathcal{C}\)</span>, entonces el vector <span class="math inline">\(\mathbf{v}\)</span> en la nueva base <span class="math inline">\(\mathcal{C}\)</span> es:</p>
 <p><span class="math display">\[
 \mathbf{v}' = \mathbf{B} \mathbf{v}
 \]</span></p>
 <p>Donde: - <span class="math inline">\(\mathbf{v}\)</span> es el vector original en la base <span class="math inline">\(\mathcal{B}\)</span>. - <span class="math inline">\(\mathbf{v}'\)</span> es el vector en la nueva base <span class="math inline">\(\mathcal{C}\)</span>. - <span class="math inline">\(\mathbf{B}\)</span> es la matriz de cambio de base.</p>
+</section>
 <section class="slide level2">
 
 </section></section>
-<section id="aplicación-del-cambio-de-base" class="title-slide slide level1 center">
-<h1>Aplicación del Cambio de Base</h1>
-<p>Vamos a ver un ejemplo sencillo de un cambio de base en dos dimensiones, rotando un vector en el plano cartesiano.</p>
-<div id="24e3d666" class="cell" data-execution_count="1">
+<section>
+<section id="ejemplo-grafico" class="title-slide slide level1 center">
+<h1>ejemplo Grafico</h1>
+
+<img data-src="image.png" class="r-stretch"></section>
+<section id="ejemplo-de-dietas" class="slide level2">
+<h2>Ejemplo de dietas</h2>
+<div id="1fd9a131" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="cambio_base_files/figure-revealjs/cell-2-output-1.png" width="515" height="505"></p>
+<p><img data-src="cambio_base_files/figure-revealjs/cell-2-output-1.png" width="530" height="524"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Ejemplo de dietas</p>
-<div id="272a49b4" class="cell" data-execution_count="2">
+</section>
+<section class="slide level2">
+
+<div id="06e3922e" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -374,20 +376,26 @@
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="cambio_base_files/figure-revealjs/cell-3-output-2.png" width="535" height="524"></p>
-</figure>
 </div>
-</div>
-</div>
+</section>
+<section class="slide level2">
+
+<p>Encontrar el cambio de base entre estas dos bases y aplicarla a los siguientes vectores: <span class="math display">\[
+\mathbf{V}_1 = \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}, \quad
+\mathbf{V}_2 = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}, \quad
+\mathbf{V}_3 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{w}_1 = \begin{pmatrix} 6 \\ 3 \\ 3 \end{pmatrix}, \quad
+\mathbf{w}_2 = \begin{pmatrix} 4 \\ -1 \\ 3 \end{pmatrix}, \quad
+\mathbf{w}_3 = \begin{pmatrix} 5 \\ 5 \\ 2 \end{pmatrix}
+\]</span></p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
