@@ -1,0 +1,70 @@
+---
+title: "Parcial Algebra lineal"
+format: pdf
+geometry: margin=2cm
+---
+Parcial 2 - Algebra Lineal primera parte
+
+Tema: Espacios vectoriales, subespacios, independencia lineal, bases, proyecciones
+
+
+
+**Nombre:**
+
+1. Sea $V$ un espacio vectorial de $R^3$ y 
+
+$$W=\bigg\{ \begin{pmatrix} x \\ y \\ z \end{pmatrix} \in R^3 : x + y - z = 0 \bigg\}$$
+
+
+  + Muestre que $W$ es un subespacio de $R^3$.
+
+
+  + Los vectores $\vec{v} = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$ y $\vec{w} = \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix}$ están en $W$? Justifique su respuesta.
+
+  + Encuentre un vector que no este en $W$.
+
+  + Encuentre una base para $W$.
+
+
+
+2. Sea la matriz $A$ dada por
+
+$$A = \begin{pmatrix} 1 & -1& 0 \\ 0 & 0 & 1 \\ 1 & 1 & 1 \end{pmatrix}$$
+
++ Las columnas de $A$ son linealmente independientes.
+
++ ¿Estas pueden formar una base para $R^3$?
+
++ Si tengo el sistema de
+
+$$A\vec{x} = \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}$$
+
+ Con base en las afirmaciones anteriores, justifique por qué el sistema tiene solución única.
+
++ Que relación existe entre la independencia de las columnas de $A$ y la existencia de la inversa de $A$.
+
+\newpage 
+
+3. Un ingeniero está evaluando el desempeño de una tubería que transporta agua en un sistema de irrigación. Se han realizado mediciones de la **altura del agua** en relación con la **distancia a lo largo de la tubería**. Las mediciones presentan algunas variaciones debido a posibles errores, y el ingeniero quiere ajustar una línea recta a los datos para modelar el comportamiento general de la altura del agua.
+
+  Las mediciones tomadas son las siguientes:
+
+$$
+P_1 = (1, 2): \ \text{a una distancia de 1 metro, la altura del agua es 2 metros.}
+$$
+$$
+P_2 = (2, 3): \ \text{a una distancia de 2 metros, la altura del agua es 2.5 metros.}
+$$
+$$
+P_3 = (3, 5): \ \text{a una distancia de 3 metros, la altura del agua es 3 metros.}
+$$
+
+
+Con base en las medidas anteriores el ingeniero pretende encontrar una formula que dada la distancia, le permita predecir la altura del agua. Para ello, el ingeniero propone el siguiente modelo:
+
+$$ h(x) = a + bx $$
+ donde $x$ es la distancia a lo largo de la tubería y $h(x)$ es la altura del agua.
+
++ Describa como se puede plantear el problema anterior en términos de un sistema de ecuaciones lineales.
+
++ Encuentre los valores de $a$ y $b$ que mejor ajustan la línea recta a los datos.
