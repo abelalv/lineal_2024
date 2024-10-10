@@ -54,8 +54,5 @@ def dibujar_dado(puntos, titulo="Dado"):
     plt.title(titulo)
     plt.show()
 
-# Pregunta 3: Rotación continua en el eje Y
-def rotacion_continua(puntos, angulos, eje='y'):
-    for angulo in angulos:
-        puntos_rotados = rotacion_3d(puntos, angulo, eje=eje)
-        dibujar_dado(puntos_rotados, f"Dado rotado {angulo} grados en el eje {eje}")
+# Crear el dado original
+dado = crear_dado()
