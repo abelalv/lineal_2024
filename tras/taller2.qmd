@@ -1,0 +1,76 @@
+---
+title: "Taller Algebra lineal"
+format: pdf
+geometry: margin=2cm
+---
+
+1. Dada la transformación $T: \mathbb{R}^2 \to \mathbb{R}^2$ tal que 
+$$ T(x, y) = (2x + y, 3x - 4y), $$ 
+determina si $T$ es una transformación lineal. Si lo es, encuentra su matriz asociada.
+
+2. Dada la matriz de transformación 
+$$ A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}, $$ 
+encuentra la imagen de los vectores 
+$$ v_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \, v_2 = \begin{pmatrix} 3 \\ 0 \end{pmatrix} $$ 
+bajo la transformación lineal $T(v) = Av$.
+
+3. Encuentra el núcleo y la imagen de la transformación lineal representada por la matriz 
+$$ A = \begin{pmatrix} 2 & -1 \\ 0 & 0 \\ 1 & -1 \end{pmatrix}. $$
+
+4. Demuestra si la transformación lineal dada por 
+$$ T: \mathbb{R}^3 \to \mathbb{R}^2 $$ 
+con matriz 
+$$ A = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 3 & -1 \end{pmatrix} $$ 
+es inyectiva, sobreyectiva o ninguna de las dos.
+
+Nota Inyectiva (o uno a uno): Si $T(v) = 0$ solo tiene la solución trivial $v = 0$.
+Sobreyectiva (o sobre): Si para cada $b \in \mathbb{R}^2$ existe un $v \in \mathbb{R}^3$ tal que $T(v) = b$.
+
+5. Sean $T_1: \mathbb{R}^2 \to \mathbb{R}^2$ y $T_2: \mathbb{R}^2 \to \mathbb{R}^2$ dos transformaciones lineales cuyas matrices asociadas son 
+$$ A_1 = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} $$ 
+y 
+$$ A_2 = \begin{pmatrix} 2 & 1 \\ 0 & 1 \end{pmatrix}, $$ 
+respectivamente. Encuentra la matriz de la transformación $T_3 = T_2 \circ T_1$.
+
+Nota $T_3 = T_2 \circ T_1$ significa que primero se aplica $T_1$ y luego $T_2$.
+
+6. Dado el vector 
+$$ v = \begin{pmatrix} 3 \\ -4 \\0\end{pmatrix}, $$ 
+calculaR la norma euclidiana $\|v\|_2$,$\|v\|_\infty$,$\|v\|_1$ 
+7. Dado el vector 
+$$ v = \begin{pmatrix} 2 \\ 3 \end{pmatrix}, $$ 
+y la nueva base 
+$$ B = \left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \end{pmatrix} \right\}, $$ 
+encuentra las coordenadas del vector $v$ en la base $B$.
+
+8. Encuentra la matriz de cambio de base que transforma las coordenadas de la base canónica $\{e_1, e_2\}$ a la base 
+$$ B = \left\{ \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \begin{pmatrix} 3 \\ 1 \end{pmatrix} \right\}. $$
+
+9. Sea $T: \mathbb{R}^2 \to \mathbb{R}^2$ una transformación lineal con matriz asociada 
+$$ A = \begin{pmatrix} 2 & 1 \\ 0 & 1 \end{pmatrix} $$ 
+en la base canónica. Si la base cambia a 
+$$ B = \left\{ \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix} \right\}, $$ 
+encuentra la matriz de $T$ en la nueva base.
+
+10. En un circuito resistivo de 3 nodos, las corrientes $I_1, I_2, I_3$ que pasan por las resistencias $R_1, R_2, R_3$ están relacionadas mediante una transformación lineal dada por la matriz:
+
+$$ A = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 3 & -1 \\ 0 & -1 & 2 \end{pmatrix}. $$
+
+Supón que las resistencias se miden en una nueva base $B = \{b_1, b_2, b_3\}$, donde:
+
+$$ B = \left\{ \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} \right\}. $$
+
+
++ Encuentra la matriz de la transformación $T_B$ que relaciona las corrientes en esta nueva base.
++ Calcula las corrientes $I_B$ en la base $B$ cuando los voltajes aplicados son $V = \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}$ en la base canónica.
+
+
+11. 
+Dada la transformación $T: \mathbb{R}^3 \to \mathbb{R}^3$ definida por 
+$$ T(x_1, x_2, x_3) = (x_1 + 2x_2 - x_3, 3x_1 - x_2 + x_3, x_2 + 4x_3), $$ 
+determina si $T$ es una transformación lineal. En caso de que lo sea, encuentra su matriz asociada.
+
+
+12. Encuentra la inversa de la transformación lineal dada por la matriz 
+$$ A = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}, $$ 
+si existe. En caso de que no exista, explica por qué.
