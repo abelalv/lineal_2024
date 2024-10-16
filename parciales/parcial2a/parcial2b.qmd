@@ -1,0 +1,57 @@
+---
+title: "Parcial Algebra lineal"
+format: pdf
+geometry: margin=2cm
+---
+# Parcial 2 - Algebra Lineal segunda  parte
+
+## Nombre:
+
+
+1. Dada la transformación $T : \mathbb{R}^2 \to \mathbb{R}^2$ tal que
+
+$$
+T(x, y) = (2x + y, x - 4y),
+$$
+
+determina si $T$ es una transformación lineal. Si lo es, encuentra su matriz asociada y determine la dimensión del núcleo y la imagen de $T$.
+
+2. Sean $T_1 : \mathbb{R}^2 \to \mathbb{R}^2$ y $T_2 : \mathbb{R}^2 \to \mathbb{R}^2$ dos transformaciones lineales cuyas matrices asociadas son
+
+$$
+A_1 = \begin{pmatrix}
+1 & 0 \\
+0 & -2
+\end{pmatrix}
+$$
+
+y
+
+$$
+A_2 = \begin{pmatrix}
+2 & 1 \\
+0 & 1
+\end{pmatrix},
+$$
+
+respectivamente. Encuentra la matriz de la transformación $T_3 = T_2 \circ T_1$ y $T_4 = T_1 \circ T_2$, tiene alguna relación entre ellas?
+
+\textbf{Nota:} $T_3 = T_2 \circ T_1$ significa que primero se aplica $T_1$ y luego $T_2$.
+
+
+3. Sea $T : \mathbb{R}^2 \to \mathbb{R}^2$ una transformación lineal con matriz asociada
+
+$$
+A = \begin{pmatrix}
+3 & 1 \\
+0 & 1
+\end{pmatrix}
+$$
+
+en la base canónica. Si la base cambia a
+
+$$
+B = \left\{ \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix} \right\},
+$$
+
+encuentra la matriz de $T$ en la nueva base.
