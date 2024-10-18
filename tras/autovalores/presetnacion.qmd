@@ -1,0 +1,421 @@
+---
+title: "Lista de Equivalencias para una Matriz No Singular"
+format: revealjs
+---
+
+# Equivalencias para Matrices No Singulares
+
+Las siguientes afirmaciones son equivalentes para una matriz cuadrada $A$ de tamaño $n \times n$:
+
+---
+
+1. **A es no singular.**
+
+2. $x = 0$ es la única solución para la ecuación $Ax = 0$.
+
+3. A es equivalente por filas (renglones) a la matriz identidad $I_n$.
+
+4. El sistema lineal $Ax = b$ tiene una única solución para cualquier vector $b$ de $n \times 1$.
+
+---
+
+5. El determinante de $A$ es distinto de cero, es decir, $\det(A) \neq 0$.
+
+6. El rango de $A$ es $n$.
+
+7. La nulidad de $A$ es $0$.
+
+---
+
+8. Las filas de $A$ forman un conjunto linealmente independiente de $n$ vectores en $\mathbb{R}^n$.
+
+9. Las columnas de $A$ forman un conjunto linealmente independiente de $n$ vectores en $\mathbb{R}^n$.
+
+10. Cero no es un valor propio de $A$.
+
+---
+
+### Polinomio Característico y Valores Propios
+
+Para calcular los **valores propios** de una matriz $A$, usamos el **polinomio característico**. Este polinomio se define como:
+
+$$
+p_A(\lambda) = \det(A - \lambda I)
+$$
+
+Donde:
+- $\lambda$ es un escalar (el valor propio).
+- $I$ es la matriz identidad de tamaño $n \times n$.
+
+### Pasos para calcular los valores propios:
+
+1. Calcula $A - \lambda I$.
+2. Determina el determinante $\det(A - \lambda I)$.
+3. Resuelve la ecuación $p_A(\lambda) = 0$ para encontrar los valores de $\lambda$, que son los valores propios de $A$.
+
+---
+
+# Ejemplos de Matrices y Valores Propios
+
+---
+
+### 1. Matriz $ 2 \times 2 $ con dos valores propios diferentes
+
+Matriz:
+$$
+A_1 = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}
+$$
+
+Valores propios:
+$$
+\lambda_1 = 5, \quad \lambda_2 = 2
+$$
+
+Vectores propios:
+$$
+v_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \quad v_2 = \begin{pmatrix} -1 \\ 1 \end{pmatrix}
+$$
+
+---
+
+### 2. Matriz $ 2 \times 2 $ diagonal con un solo valor propio
+
+Matriz:
+$$
+A_2 = \begin{pmatrix} 3 & 0 \\ 0 & 3 \end{pmatrix}
+$$
+
+Valor propio:
+$$
+\lambda = 3 \quad \text{(repetido)}
+$$
+
+Vectores propios:
+$$
+v_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad v_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+$$
+
+---
+
+### 3. Matriz $ 2 \times 2 $ con un valor propio y un solo vector propio
+
+Matriz:
+$$
+A_3 = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}
+$$
+
+Valor propio:
+$$
+\lambda = 2 \quad \text{(repetido)}
+$$
+
+Vector propio (único):
+$$
+v = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
+$$
+
+---
+
+### 4. Matriz $ 2 \times 2 $ con dos valores propios complejos
+
+Matriz:
+$$
+A_4 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+$$
+
+Valores propios (complejos):
+$$
+\lambda_1 = i, \quad \lambda_2 = -i
+$$
+
+Vectores propios complejos:
+$$
+v_1 = \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad v_2 = \begin{pmatrix} 1 \\ -i \end{pmatrix}
+$$
+
+---
+
+# Cadenas de Markov y Valores Propios
+
+---
+
+## ¿Qué es una cadena de Markov?
+
+Una **cadena de Markov** es un proceso estocástico en el cual el estado futuro depende únicamente del estado actual y no de los estados previos. Este proceso se representa usando **matrices de transición**, donde los elementos de la matriz describen la probabilidad de moverse de un estado a otro.
+
+---
+---
+title: "Ejemplos de Matrices 3x3 con Valores Propios"
+format: revealjs
+---
+
+# Ejemplos de Matrices 3x3 con Valores Propios
+
+A continuación se muestran varios ejemplos de matrices \(3 \times 3\) con diferentes configuraciones de valores propios y vectores propios.
+
+---
+
+### 1. Matriz \( 3 \times 3 \) con tres valores propios diferentes
+
+Matriz:
+$$
+A_1 = \begin{pmatrix} 6 & 2 & 0 \\ 2 & 3 & 0 \\ 0 & 0 & 5 \end{pmatrix}
+$$
+
+Valores propios:
+$$
+\lambda_1 = 7, \quad \lambda_2 = 2, \quad \lambda_3 = 5
+$$
+
+Vectores propios:
+$$
+v_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \quad v_2 = \begin{pmatrix} -1 \\ 2 \\ 0 \end{pmatrix}, \quad v_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+$$
+
+Esta matriz tiene tres valores propios diferentes con tres vectores propios linealmente independientes.
+
+---
+
+### 2. Matriz \( 3 \times 3 \) diagonal con un valor propio repetido
+
+Matriz:
+$$
+A_2 = \begin{pmatrix} 4 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 4 \end{pmatrix}
+$$
+
+Valor propio:
+$$
+\lambda = 4 \quad \text{(repetido tres veces)}
+$$
+
+Vectores propios:
+$$
+v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \quad v_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \quad v_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+$$
+
+Esta matriz diagonal tiene un valor propio repetido tres veces, pero tres vectores propios distintos, correspondientes a los ejes principales.
+
+---
+
+### 3. Matriz \( 3 \times 3 \) con un valor propio y un solo vector propio
+
+Matriz:
+$$
+A_3 = \begin{pmatrix} 3 & 1 & 0 \\ 0 & 3 & 1 \\ 0 & 0 & 3 \end{pmatrix}
+$$
+
+Valor propio:
+$$
+\lambda = 3 \quad \text{(repetido tres veces)}
+$$
+
+Vector propio:
+$$
+v = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
+$$
+
+En este caso, aunque el valor propio $\lambda = 3$ está repetido tres veces, solo tiene un vector propio asociado, lo que indica que la matriz no es diagonalizable y tiene una base incompleta de vectores propios.
+
+---
+
+### 4. Matriz \( 3 \times 3 \) con valores propios complejos
+
+Matriz:
+$$
+A_4 = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 3 \end{pmatrix}
+$$
+
+Valores propios:
+$$
+\lambda_1 = i, \quad \lambda_2 = -i, \quad \lambda_3 = 3
+$$
+
+Vectores propios complejos:
+$$
+v_1 = \begin{pmatrix} 1 \\ i \\ 0 \end{pmatrix}, \quad v_2 = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}, \quad v_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+$$
+
+Esta matriz tiene dos valores propios complejos conjugados $i$ y $-i$, junto con un valor propio real $\lambda_3 = 3$, y sus correspondientes vectores propios.
+
+---
+
+
+
+
+
+
+# Aplicaciones de Autovalores y Autovectores
+
+Los **autovalores** y **autovectores** son herramientas matemáticas muy útiles en diversas disciplinas. A continuación, se enumeran algunas de las aplicaciones más comunes:
+
+---
+
+### 1. Análisis de Sistemas Dinámicos
+
+- Los autovalores se utilizan para analizar la **estabilidad** de sistemas dinámicos, como circuitos eléctricos, sistemas mecánicos y control automático.
+- En ecuaciones diferenciales lineales, los autovalores determinan la naturaleza de las soluciones y si un sistema se estabiliza o no.
+
+---
+
+### 2. Cadenas de Markov y Procesos Estocásticos
+
+- En cadenas de Markov, los autovalores y autovectores de la matriz de transición son esenciales para determinar el **comportamiento a largo plazo**.
+- Aplicado a modelado de procesos de decisiones y análisis de sistemas con probabilidades de transición (por ejemplo, marketing o biología).
+
+---
+
+### 3. Mecánica Cuántica
+
+- En la física cuántica, los autovalores corresponden a los **niveles de energía** y los autovectores a los **estados cuánticos**.
+- Son clave en la solución de la **ecuación de Schrödinger** y otros problemas de sistemas cuánticos.
+
+---
+
+### 4. Vibraciones y Análisis Modal
+
+- Los autovalores de una matriz de masa y rigidez determinan las **frecuencias naturales** de vibración de una estructura.
+- Aplicación en el diseño de puentes, edificios, vehículos, y aviones para evitar resonancias peligrosas.
+
+---
+
+### 5. Google PageRank
+
+- El algoritmo **PageRank** de Google utiliza autovalores y autovectores de una matriz de transición para calcular la **importancia relativa de páginas web**.
+- Aplicado en motores de búsqueda para clasificar y ordenar páginas basadas en enlaces.
+
+---
+
+### 6. Procesamiento de Imágenes y Visión por Computadora
+
+- **Autovectores** se utilizan en la compresión de imágenes y reducción de dimensionalidad mediante **PCA (Análisis de Componentes Principales)**.
+- Usado en **reconocimiento facial** y otras aplicaciones de análisis de patrones en imágenes.
+
+---
+
+### 7. Reducción de Dimensionalidad
+
+- En **PCA**, los autovalores y autovectores permiten reducir la dimensionalidad de grandes conjuntos de datos, manteniendo la mayor cantidad posible de información.
+- Aplicación en análisis de datos y machine learning.
+
+---
+
+### 8. Redes Eléctricas
+
+- En análisis de **estabilidad de redes eléctricas**, los autovalores determinan si el sistema puede mantener una operación estable o si es probable que ocurra una falla.
+
+---
+
+### 9. Elasticidad y Análisis de Tensiones
+
+- Los autovalores de los tensores de estrés o deformación indican las **direcciones principales** de tensiones en sólidos y los **valores críticos** de tensión.
+
+---
+
+### 10. Métodos Numéricos y PDEs
+
+- En la solución numérica de **ecuaciones diferenciales parciales (PDEs)**, los autovalores y autovectores juegan un papel fundamental en la discretización y análisis del problema.
+
+---
+
+### 11. Machine Learning y Algoritmos de Optimización
+
+- Los autovalores se usan en **algoritmos de optimización**, como el **SVD (Descomposición en Valores Singulares)**, y en técnicas de reducción de características como **PCA** en machine learning.
+
+---
+
+### 12. Computación Cuántica
+
+- Los autovalores y autovectores son fundamentales en **algoritmos cuánticos**, como el **algoritmo de Shor**, y en la **criptografía cuántica**.
+
+---
+
+### 13. Dinámica Poblacional
+
+- En **biología**, los autovalores se usan en modelos de crecimiento poblacional para predecir comportamientos a largo plazo en especies que interactúan entre sí o en la propagación de enfermedades.
+
+---
+
+### 14. Análisis de Redes Sociales
+
+- En la teoría de redes, los autovalores y autovectores de matrices de adyacencia se utilizan para identificar la **influencia de nodos** o **comunidades** en redes sociales.
+
+---
+
+### 15. Robótica y Sistemas de Control
+
+- En robótica, los autovalores son esenciales para diseñar **controladores de retroalimentación** que aseguren la estabilidad y el comportamiento deseado en robots y sistemas autónomos.
+
+---
+
+# Conclusión
+
+Los autovalores y autovectores son herramientas poderosas que aparecen en una amplia gama de disciplinas. Proporcionan información clave sobre:
+- **Estabilidad**
+- **Comportamiento a largo plazo**
+- **Optimización**
+- **Reducción de datos**
+
+Y son esenciales en la solución de muchos problemas prácticos y teóricos en matemáticas aplicadas, ingeniería, física y ciencia de datos.
+
+
+
+
+
+---
+
+## Uso de Autovalores y Autovectores en Cadenas de Markov
+
+Los **autovalores** y **autovectores** son fundamentales para analizar el comportamiento a largo plazo de una cadena de Markov. 
+
+### ¿Por qué son útiles?
+
+1. **Estado estacionario**: El **autovalor $\lambda = 1$** de la matriz de transición corresponde al **estado estacionario** de la cadena de Markov. El vector propio asociado describe la distribución de probabilidad a la que el sistema converge a largo plazo.
+
+2. **Convergencia**: Los autovalores menores en magnitud determinan la velocidad con la que el sistema converge al estado estacionario. Cuanto más pequeños sean estos autovalores, más rápido convergerá la cadena de Markov.
+
+---
+
+# Ejemplo Real: Comportamiento de Clientes en Dos Tiendas
+
+---
+
+Imaginemos dos tiendas, **A** y **B**, donde los clientes pueden cambiar entre las tiendas de acuerdo con probabilidades conocidas. La matriz de transición describe estas probabilidades:
+
+$$
+P = \begin{pmatrix} 0.9 & 0.1 \\ 0.5 & 0.5 \end{pmatrix}
+$$
+
+- La entrada $P_{11} = 0.9$ indica que si un cliente está en la tienda **A**, tiene un 90% de probabilidad de quedarse en **A** y un 10% de cambiarse a **B**.
+- $P_{21} = 0.5$ indica que si un cliente está en **B**, tiene un 50% de probabilidad de quedarse y un 50% de ir a **A**.
+
+---
+
+## Cálculo de los Autovalores
+
+Los autovalores de la matriz $P$ se obtienen resolviendo el polinomio característico $\det(P - \lambda I) = 0$. Para esta matriz, los autovalores son:
+
+$$
+\lambda_1 = 1, \quad \lambda_2 = 0.4
+$$
+
+El autovalor $\lambda_1 = 1$ indica que existe un **estado estacionario**, mientras que $\lambda_2 = 0.4$ indica la velocidad de convergencia a este estado estacionario.
+
+---
+
+## Estado Estacionario
+
+El vector propio asociado a $\lambda_1 = 1$ describe la distribución a largo plazo de clientes entre las tiendas:
+
+$$
+v = \begin{pmatrix} 0.833 \\ 0.167 \end{pmatrix}
+$$
+
+Esto significa que, a largo plazo, aproximadamente el **83.3%** de los clientes permanecerán en la tienda **A**, mientras que el **16.7%** de los clientes estarán en la tienda **B**, sin importar de dónde comenzaron.
+
+---
+
+## Conclusión
+
+Este tipo de análisis permite a los gerentes de tiendas predecir la **distribución estable** de clientes entre sus locales y entender el **tiempo de convergencia** hacia esa distribución a largo plazo.
+---
+
