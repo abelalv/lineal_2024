@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Taller de Álgebra Lineal: Autovalores, Autovectores y Diagonalización}
+\author{ }
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Parte Teórica}
+
+\begin{enumerate}
+    \item \textbf{Dimensión geométrica y algebraica:} 
+    Explica las diferencias entre la dimensión algebraica y la dimensión geométrica de un autovalor. Da ejemplos de cómo estas dimensiones pueden diferir en una matriz \(3 \times 3\), y cómo esto afecta la diagonalización de la matriz.
+
+    \item \textbf{Criterios de diagonalización:} 
+    Explica los criterios necesarios para que una matriz cuadrada sea diagonalizable. En tu explicación, incluye la relación entre los autovalores distintos, la multiplicidad algebraica y la multiplicidad geométrica.
+
+    \item \textbf{Significado geométrico de los autovalores y autovectores:} 
+    Describe el significado geométrico de los autovalores y autovectores de una matriz \(2 \times 2\) con autovalores complejos. ¿Cómo afectan a la interpretación geométrica de la transformación lineal?
+
+    \item \textbf{Matrices no diagonalizables:} 
+    Considera la matriz \( A = \begin{pmatrix} 4 & 1 & 0 \\ 0 & 4 & 1 \\ 0 & 0 & 4 \end{pmatrix} \). Discute por qué no es diagonalizable, y explica cómo la diferencia entre dimensión geométrica y algebraica juega un papel en esta propiedad.
+
+    \item \textbf{Aplicaciones de la diagonalización:} 
+    ¿Por qué la diagonalización es importante en la resolución de sistemas dinámicos y en la obtención de potencias de matrices? Explica cómo la diagonalización ayuda en el análisis a largo plazo de sistemas dinámicos.
+\end{enumerate}
+
+\section*{Parte Práctica (Cálculos)}
+
+\begin{enumerate}
+    \setcounter{enumi}{5}
+
+    \item \textbf{Verificar diagonalización (Matriz \(2 \times 2\)):} 
+    Dada la matriz \( A = \begin{pmatrix} 5 & 2 \\ 2 & 3 \end{pmatrix} \), determina si es diagonalizable. Si lo es, encuentra su matriz diagonal y la matriz de cambio de base. Discute los autovalores y autovectores.
+
+    \item \textbf{Verificar diagonalización (Matriz \(3 \times 3\)):} 
+    Considera la matriz \( B = \begin{pmatrix} 1 & -3 & 3 \\ 3 & -5 & 3 \\ 6 & -6 & 4 \end{pmatrix} \). Determina si es diagonalizable, y si lo es, encuentra su forma diagonal y la matriz de autovectores. Comenta sobre los autovalores complejos y su interpretación.
+
+    \item \textbf{Verificar diagonalización (Matriz \(3 \times 3\)):} 
+    Para la matriz \( C = \begin{pmatrix} 4 & 2 & 1 \\ 0 & 3 & 0 \\ 1 & 0 & 4 \end{pmatrix} \), determina si es diagonalizable. Si lo es, proporciona la matriz diagonal y la matriz de cambio de base correspondiente.
+
+    \item \textbf{Aplicación (Transformaciones geométricas en \( \mathbb{R}^3 \)):} 
+    Considera la matriz \( D = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix} \), que representa una transformación lineal en \( \mathbb{R}^3 \). Encuentra sus autovalores y autovectores, y describe cómo esta transformación afecta a los vectores en el espacio tridimensional. ¿Qué interpretaciones geométricas se pueden hacer sobre la transformación?
+
+    \item \textbf{Aplicación (Sistemas dinámicos):} 
+    Un sistema dinámico discreto está modelado por la ecuación \( \mathbf{x}_{n+1} = A \mathbf{x}_n \), donde 
+    \[
+    A = \begin{pmatrix} 0.7 & 0.2 & 0.1 \\ 0.1 & 0.8 & 0.1 \\ 0.2 & 0.1 & 0.9 \end{pmatrix}.
+    \]
+    Determina los autovalores y autovectores de \( A \). Con base en los autovalores, ¿cómo se comportará el sistema a largo plazo?
+\end{enumerate}
+
+\end{document}
