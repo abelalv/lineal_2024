@@ -1,0 +1,218 @@
+---
+title: "Aplicaciones"
+format: revealjs
+---
+
+# Teorema 
+
+Si $A$ es una matriz cuadrada simétrica, entonces sus autovalores son reales.    
+
+
+
+
+
+---
+
+### Ejemplo 1
+
+Para estudiar la evolución de una población de pájaros los
+dividimos en dos grupos de edad: jóvenes y adultos. Los
+jóvenes no se reproducen y el 30 % de ellos sobrevive y llegan
+a la primavera siguiente convertidos en adultos. Cada adulto
+produce una media de 2 jóvenes por año y el número de
+adultos que sobrevive cada año es el 40 %. Inicialmente hay
+1000 adultos y ningún joven
+
+
+---
+
+$$ 
+\begin{align*}
+x_{n+1} & = 2 y_n \\
+y_{n+1} & = 0.3 x_n+0.4 y_n
+\end{align*}
+$$
+
+¿Cuál es la población de pájaros en la primavera siguiente?
+
+¿Cuál es la población de pájaros en el largo plazo?
+
+---
+
+## Proceso de Markov
+
+
+
+# ¿Qué es un Proceso de Markov?
+
+Un **proceso de Markov** es un modelo que describe cómo un sistema cambia de estado en diferentes puntos del tiempo. 
+
+- **Propiedad clave**: El estado futuro solo depende del estado actual, no de los estados anteriores.
+- Los **estados** representan las diferentes situaciones posibles.
+- Las **transiciones** son los cambios entre estados y tienen una **probabilidad** asociada.
+
+---
+
+Un sistema evolutivo de la forma 
+$$
+\overrightarrow{X}_n = T \overrightarrow{X}_{n-1}$$
+donde \(T\) es una matriz cuadrada de orden \(k\) en la que la suma de los elementos de cada una de sus columnas es 1, se llama un **proceso de Markov**. La matriz \(T\) se denomina **matriz de transición** del proceso.
+
+
+---
+
+# Ejemplo Básico
+
+Imagina un sistema con dos estados, $A$ y $B$:
+
+- Si el sistema está en $A$, hay un 70% de probabilidad de que se quede en $A$ y un 30% de probabilidad de que vaya a $B$.
+- Si el sistema está en $B$, hay un 50% de probabilidad de que se quede en $B$ y un 50% de probabilidad de que regrese a $A$.
+
+---
+
+# Matriz de Transición
+
+Podemos representar este ejemplo con la siguiente **matriz de transición**:
+
+$$
+P = \begin{pmatrix}
+0.7 & 0.3 \\
+0.5 & 0.5
+\end{pmatrix}
+$$
+
+- La primera fila representa las probabilidades de transición desde el estado $A$.
+- La segunda fila representa las probabilidades de transición desde el estado $B$.
+
+---
+
+# Propiedad de Markov
+
+Una de las características más importantes de los procesos de Markov es que solo **el estado actual importa**.
+
+- No importa cómo llegamos a ese estado.
+- Las transiciones futuras dependen solo del estado en el que se encuentra el sistema actualmente.
+
+---
+
+# Aplicaciones de los Procesos de Markov
+
+Los procesos de Markov se utilizan en:
+
+- Biología: Modelos de población, evolución.
+- Economía: Predicción de mercados financieros.
+- Informática: Búsquedas en la web, algoritmos de Google.
+  
+
+
+
+
+---
+
+### Ejemplo 2
+
+Dos paises A y B comparten la misma moneda. Inicialmente A
+tiene el 60 % de la monedas y B tiene el 40 %. Cada año el
+80 % de las monedas que hay en un país se queda en el
+mismo y el 20 % pasa al otro país.
+
+---
+
+$$
+\begin{align*}
+x_{n+1} & = 0.8 x_n + 0.2 y_n \\
+y_{n+1} & = 0.2 x_n + 0.8 y_n
+\end{align*}
+$$
+
+### Autovalor dominante
+
+Sea $A$ una matriz cuadrada diagonizable con autovalores $\lambda_1, \lambda_2, \ldots, \lambda_n$ y autovectores asociados $v_1, v_2, \ldots, v_n$. Entonces, el autovalor dominante es el autovalor con la mayor magnitud.
+
+---
+
+Sea la matriz
+
+$$
+P = \begin{pmatrix}
+0.8 & 0.2 \\
+0.2 & 0.8
+\end{pmatrix}
+$$
+
+y el vector inicial
+
+$$
+\begin{pmatrix}
+0.6 \\
+0.4
+\end{pmatrix}
+$$
+
+---
+
+
+Vemos que $P^n x$ tiende a un vector constante cuando $n$ tiende a infinito. Este vector constante es el autovector asociado al autovalor dominante de $P$.
+
+¿Que significa esto?
+
+¿Cómo lo podemos interpretar?
+
+---
+
+## Ejercicio
+
+Una población de individuos está distribuida en
+dos grupos de edad, jóvenes y adultos. Cada año un individuo
+joven produce, en promedio, 1,5 nuevos jóvenes, y un individuo
+adulto produce, en promedio, 2 nuevos jóvenes. Por otro lado,
+solo el 8 % de los jóvenes sobrevive y pasa a ser adulto,
+mientras que todos los individuos adultos han muerto al
+finalizar el segundo año.
+
++ Escribe el modelo matricial de la dinámica de esta población.
+
++ ¿Cuál es la tasa de crecimiento de cada grupo de edad con
+el paso del tiempo?
+
++ ¿Cómo se distribuye la población con el paso del tiempo?
+
++ Si inicialmente hay 100 jóvenes y 100 adultos, ¿cuántos
+habrá en cada grupo después de 10 años?
+
+---
+
+## Ejercicio
+
+Una colonia de perdices vive en dos ecosistemas
+X e Y. Inicialmente hay 1500 perdices en X y 500 en Y. Cada
+mes el 5 % de las perdices de X migra a Y y a su vez el 5 % de
+las perdices de Y migra a X.
+
++ Escribe las ecuaciones de la evolución del número de
+perdices en cada ecosistema.
+
++ ¿Qué cantidad de perdices habrá en cada ecosistema
+después de 1 año?
+
++  ¿Qué cantidad de perdices habrá en cada ecosistema con el
+paso del tiempo?
+
+---
+
+## Ejercicio 
+
+Cultivo de plantas. Rasgos genéticos
+heredados. En un vivero hay 1000 flores rojas (genotipo AA),
+1000 flores rosas (genotipo Aa) y 1000 flores blancas (genotipo
+aa) de una determinada especie. Solo se fertiliza cada planta
+con las de su genotipo.
+
++ Escribe un sistema que describa la cantidad de flores de
+cada color después de cada periodo de fertilización.
+
++  ¿Cuál será la distribución de las flores con el paso del
+tiempo?
+
++ ¿Cuántos periodos de fertilización pasarán antes de que
+desaparezcan las plantas de flores rosas?
