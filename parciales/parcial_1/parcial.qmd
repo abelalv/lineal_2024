@@ -11,7 +11,7 @@ output:
 
 $$\begin{cases}2x+z=0\\
 y+z=1\\
-x+y+\alpha z=-1\end{cases}$$
+x+y+\alpha z=-3\end{cases}$$
 
 
 Encuentre un $\alpha$ para que el sistema 
@@ -45,3 +45,10 @@ entonces se puede decir que el vector
 $$\begin{bmatrix}1\\-1\end{bmatrix}$$ 
 
 se puede escribir como combinación lineal de las columnas de la matriz de coeficientes del sistema.
+
+
+4. Sea $W$ un espacio vectorial en $\mathbb{R}^3$, el siguiente conjunto
+
+$$\{ [x,y,z]\in\mathbb{R}^3: x+y+z=1\}$$
+
+¿Es un subespacio de $\mathbb{R}^3$? Justifique su respuesta.
