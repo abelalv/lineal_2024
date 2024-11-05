@@ -1,0 +1,30 @@
+---
+title: "Parcial Algebra lineal"
+format: pdf
+geometry: margin=2cm
+---
+Parcial 3a - Algebra Lineal primera parte
+
+1. Criterios de diagonalización: Explica los criterios necesarios para que una matriz cuadrada sea
+diagonalizable. En tu explicación, incluye la relación entre los autovalores distintos, la multiplicidad
+algebraica y la multiplicidad geométrica.
+
+2. Considera la matriz $A = 
+\begin{bmatrix}
+4 & 1 & 0 \\
+0 & 4 & 1 \\
+0 & 0 & 4 \\
+\end{bmatrix}$.
+
+Discute por qué no es diagonalizable y explica cómo la diferencia entre dimensión geométrica y algebraica.
+
+3. Determina si es
+diagonalizable. Si lo es, proporciona la matriz diagonal y la matriz formada por los autovectores.
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+-2 & 1 & 2 \\
+-2 & 0 & 3 \\
+\end{bmatrix}
+$$
+
