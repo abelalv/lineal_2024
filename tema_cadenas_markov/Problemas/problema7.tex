@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Generalización de la Sucesión de Fibonacci usando Autovalores y Autovectores}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema: Sucesión Tribonacci y Matrices}
+
+La sucesión de Fibonacci se puede generalizar en una sucesión en la que cada término es la suma de los tres términos anteriores, en lugar de solo los dos. Denotemos esta nueva sucesión por \(\{G_n\}\), y definámosla como:
+
+\[
+G_0 = 0, \quad G_1 = 1, \quad G_2 = 1
+\]
+y para \(n \geq 3\),
+\[
+G_n = G_{n-1} + G_{n-2} + G_{n-3}
+\]
+
+Es decir, cada término es la suma de los tres términos anteriores en lugar de los dos anteriores (como en Fibonacci). Esta sucesión es conocida como la \textbf{sucesión Tribonacci}.
+
+Para resolver este problema de forma general, necesitamos una representación matricial de la sucesión que nos permita calcular el término \(G_n\) directamente usando autovalores y autovectores.
+
+\section*{Representación Matricial}
+
+Definimos el vector de estado:
+\[
+\mathbf{v}_n = \begin{bmatrix} G_n \\ G_{n-1} \\ G_{n-2} \end{bmatrix}
+\]
+donde \(G_n\), \(G_{n-1}\), y \(G_{n-2}\) son los términos actuales y los dos términos anteriores de la sucesión.
+
+La relación de recurrencia se puede escribir en forma matricial como:
+\[
+\mathbf{v}_{n+1} = A \mathbf{v}_n
+\]
+donde la matriz de transición \( A \) es:
+\[
+A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
+\]
+
+\section*{Objetivo}
+
+Para encontrar una fórmula explícita para \( G_n \) sin tener que calcular todos los términos sucesivos, utilizaremos los \textbf{autovalores y autovectores} de la matriz \( A \) para obtener una expresión cerrada de \(G_n\).
+
+\section*{Procedimiento}
+
+\begin{enumerate}
+    \item \textbf{Cálculo de los Autovalores de \( A \)}:
+    Calcule los autovalores de \( A \) resolviendo la ecuación característica \(\text{det}(A - \lambda I) = 0\).
+   
+    \item \textbf{Cálculo de los Autovectores de \( A \)}:
+    Para cada autovalor, determine un autovector correspondiente.
+
+    \item \textbf{Expresión del Vector \( \mathbf{v}_n \) en Términos de Autovalores y Autovectores}:
+    Escriba \( \mathbf{v}_n \) como una combinación lineal de los autovectores de \( A \), escalados por las potencias de los autovalores.
+    Encuentre los coeficientes de esta combinación lineal usando las condiciones iniciales de \( G_0 \), \( G_1 \), y \( G_2 \).
+
+    \item \textbf{Obtención de una Fórmula Cerrada para \( G_n \)}:
+    Derive una expresión cerrada para \( G_n \) utilizando la diagonalización de \( A \) y la combinación lineal obtenida en el paso anterior.
+
+    \item \textbf{Verificación y Análisis de Crecimiento}:
+    Verifique la fórmula obtenida para valores específicos, como \( n = 5 \) y \( n = 10 \).
+    Determine qué autovalor domina el crecimiento de \( G_n \) y describa el comportamiento asintótico de la sucesión.
+\end{enumerate}
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) Encuentre los autovalores de \( A \) resolviendo el polinomio característico de \( A \).
+    \item (b) Encuentre los autovectores de \( A \) correspondientes a cada autovalor.
+    \item (c) Exprese el vector \( \mathbf{v}_n \) como una combinación de los autovectores de \( A \), usando potencias de los autovalores.
+    \item (d) Obtenga una fórmula cerrada para \( G_n \) en términos de \( n \), basándose en la diagonalización de \( A \).
+    \item (e) Verifique la fórmula para \( n = 5 \) y \( n = 10 \), y compárela con los valores calculados de la sucesión Tribonacci.
+    \item (f) Analice el comportamiento asintótico: Determine cuál de los autovalores domina el crecimiento de \( G_n \) y describa cómo crece la sucesión en términos de este autovalor dominante.
+\end{enumerate}
+
+\end{document}

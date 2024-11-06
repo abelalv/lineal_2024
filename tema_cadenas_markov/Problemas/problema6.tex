@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Análisis de Vibraciones en un Sistema de Dos Grados de Libertad}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema}
+
+Un ingeniero estructural está analizando un sistema de dos grados de libertad que representa un modelo simplificado de un edificio de dos pisos. Cada piso tiene una masa \( m \) y está conectado a un sistema de resortes que representa la rigidez estructural entre los pisos y el suelo. El objetivo es determinar las **frecuencias naturales de vibración** y los **modos de vibración** del sistema para evaluar el comportamiento del edificio bajo vibraciones.
+
+\subsection*{Características del Sistema}
+
+\begin{itemize}
+    \item Cada piso (1 y 2) tiene una masa \( m \).
+    \item La rigidez estructural (constante del resorte) entre el suelo y el primer piso es \( k_1 \).
+    \item La rigidez estructural entre el primer y el segundo piso es \( k_2 \).
+    \item Se supone que el sistema está sujeto a pequeñas oscilaciones alrededor de su posición de equilibrio.
+\end{itemize}
+
+\subsection*{Modelo Matemático}
+
+Para este sistema, las frecuencias naturales y los modos de vibración se pueden determinar a partir de la **matriz de rigidez** \( K \) y la **matriz de masas** \( M \). Estas matrices están definidas como:
+
+- La matriz de masas \( M \) es una matriz diagonal de tamaño \(2 \times 2\), dada por:
+  \[
+  M = \begin{bmatrix} m & 0 \\ 0 & m \end{bmatrix} = m I
+  \]
+  donde \( I \) es la matriz identidad.
+
+- La matriz de rigidez \( K \) del sistema es:
+  \[
+  K = \begin{bmatrix} k_1 + k_2 & -k_2 \\ -k_2 & k_2 \end{bmatrix}
+  \]
+
+Para encontrar las frecuencias naturales y los modos de vibración, debemos resolver el problema de autovalores asociado a estas matrices.
+
+\subsection*{Objetivo}
+
+1. Determinar las **frecuencias naturales de vibración** del sistema, las cuales están relacionadas con los autovalores de la matriz de rigidez \( K \) en relación con la matriz de masas \( M \).
+2. Encontrar los **modos de vibración** del sistema, que indican cómo se mueven los pisos (1 y 2) en cada frecuencia natural.
+
+\section*{Procedimiento}
+
+1. \textbf{Formulación del Problema de Autovalores}: Planteamos el problema de autovalores con la siguiente ecuación:
+   \[
+   \text{det}(K - \lambda M) = 0
+   \]
+   donde \(\lambda\) son los autovalores del sistema, relacionados con el **cuadrado de las frecuencias naturales**. Las frecuencias naturales \(\omega_i\) del sistema se calculan como:
+   \[
+   \omega_i = \sqrt{\lambda_i}
+   \]
+   donde \(\omega_i\) es la frecuencia natural correspondiente al autovalor \(\lambda_i\).
+
+2. \textbf{Cálculo de Autovalores}:
+   Expanda y resuelva el determinante para encontrar los autovalores \(\lambda_1\) y \(\lambda_2\).
+
+3. \textbf{Cálculo de Autovectores}:
+   Para cada autovalor \(\lambda_i\), calcule el autovector correspondiente. Estos autovectores describen los **modos de vibración**, es decir, las proporciones relativas de desplazamiento entre los dos pisos en cada frecuencia natural.
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) Escriba el problema de autovalores para el sistema, es decir, encuentre \(\text{det}(K - \lambda M) = 0\).
+    
+    \item (b) Calcule los autovalores \(\lambda_1\) y \(\lambda_2\) del sistema, y luego determine las **frecuencias naturales** \(\omega_1\) y \(\omega_2\).
+
+    \item (c) Calcule los autovectores correspondientes a \(\lambda_1\) y \(\lambda_2\). Estos autovectores representan los modos de vibración y muestran cómo se mueven los pisos en cada frecuencia natural.
+
+    \item (d) Interprete los modos de vibración:
+    \begin{itemize}
+        \item ¿Cómo se desplaza el primer piso en comparación con el segundo en cada modo?
+        \item ¿En qué dirección se desplazan los pisos para cada frecuencia natural?
+    \end{itemize}
+
+    \item (e) Respuesta del sistema a una excitación externa: Si el sistema experimenta una excitación externa con una frecuencia cercana a \(\omega_1\), ¿cómo responderá el sistema en términos de los modos de vibración?
+\end{enumerate}
+
+\section*{Solución Analítica}
+
+\begin{enumerate}
+    \item \textbf{Problema de Autovalores}
+
+    La ecuación del problema de autovalores se obtiene planteando \(\text{det}(K - \lambda M) = 0\):
+    \[
+    K - \lambda M = \begin{bmatrix} k_1 + k_2 - \lambda m & -k_2 \\ -k_2 & k_2 - \lambda m \end{bmatrix}
+    \]
+    y resolvemos \(\text{det}(K - \lambda M) = 0\) para obtener los autovalores \(\lambda_1\) y \(\lambda_2\).
+
+    \item \textbf{Cálculo de las Frecuencias Naturales}
+
+    Las frecuencias naturales del sistema se obtienen como:
+    \[
+    \omega_1 = \sqrt{\lambda_1}, \quad \omega_2 = \sqrt{\lambda_2}
+    \]
+
+    \item \textbf{Cálculo de los Autovectores}
+
+    Para cada autovalor \(\lambda_i\), el autovector correspondiente describe el modo de vibración del sistema. Resolvemos \((K - \lambda_i M) \mathbf{v}_i = 0\) para encontrar el autovector \(\mathbf{v}_i\), que representa las amplitudes relativas de desplazamiento entre los dos pisos en cada frecuencia natural.
+
+    \item \textbf{Interpretación de los Modos de Vibración}
+
+    Los autovectores \(\mathbf{v}_1\) y \(\mathbf{v}_2\) describen cómo se mueven los pisos en cada modo de vibración. Si ambos componentes del autovector tienen el mismo signo, los pisos se moverán en la misma dirección; si tienen signos opuestos, se moverán en direcciones opuestas.
+
+    \item \textbf{Respuesta a una Excitación en la Frecuencia Natural}
+
+    Si el sistema es sometido a una excitación externa con una frecuencia cercana a \(\omega_1\), el sistema mostrará un fenómeno de \textbf{resonancia} en el modo de vibración correspondiente a \(\lambda_1\), y los pisos vibrarán de acuerdo con el autovector \(\mathbf{v}_1\).
+\end{enumerate}
+
+\section*{Explicación del Problema}
+
+Este problema permite entender las **frecuencias naturales** y los **modos de vibración** de un sistema estructural simple usando autovalores y autovectores. Estos resultados son cruciales para diseñar estructuras seguras y evitar fenómenos de resonancia que puedan comprometer la integridad de la estructura.
+
+\end{document}

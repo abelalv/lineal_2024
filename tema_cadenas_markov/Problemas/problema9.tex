@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Dinámica de Población en una Colonia de Abejas con Cinco Roles}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema: Dinámica de Población en una Colonia de Abejas con Cinco Roles}
+
+Un entomólogo está investigando la dinámica de población en una colonia de abejas que se divide en cinco grupos según el rol de cada grupo: **larvas**, **abejas jóvenes**, **abejas trabajadoras**, **abejas recolectoras**, y **abejas reinas**. Cada grupo tiene una función específica y diferentes probabilidades de supervivencia y transición a otros roles. El objetivo es modelar cómo cambia la población de cada grupo en la colonia de un año a otro y entender el comportamiento a largo plazo de la colonia.
+
+Definimos las siguientes variables:
+
+- **Supervivencia y Transición**:
+  \begin{itemize}
+      \item \( s_1 \): probabilidad de que las larvas sobrevivan y se conviertan en abejas jóvenes al siguiente año.
+      \item \( s_2 \): probabilidad de que las abejas jóvenes sobrevivan y pasen a ser abejas trabajadoras.
+      \item \( s_3 \): probabilidad de que las abejas trabajadoras sobrevivan y pasen a ser abejas recolectoras.
+      \item \( s_4 \): probabilidad de que las abejas recolectoras sobrevivan y pasen a ser reinas.
+      \item \( s_5 \): probabilidad de que las abejas reinas sobrevivan al próximo año y permanezcan en su rol.
+  \end{itemize}
+
+- **Reproducción**:
+  \begin{itemize}
+      \item \( f_1 \): número de larvas producidas por cada abeja joven.
+      \item \( f_2 \): número de larvas producidas por cada abeja trabajadora.
+      \item \( f_3 \): número de larvas producidas por cada abeja recolectora.
+      \item \( f_4 \): número de larvas producidas por cada abeja reina.
+  \end{itemize}
+
+\section*{Modelo Matricial}
+
+Definimos el vector de población de la colonia en el año \( n \) como:
+\[
+\mathbf{x}_n = \begin{bmatrix} x_{n,1} \\ x_{n,2} \\ x_{n,3} \\ x_{n,4} \\ x_{n,5} \end{bmatrix}
+\]
+donde:
+- \( x_{n,1} \): número de larvas en el año \( n \).
+- \( x_{n,2} \): número de abejas jóvenes en el año \( n \).
+- \( x_{n,3} \): número de abejas trabajadoras en el año \( n \).
+- \( x_{n,4} \): número de abejas recolectoras en el año \( n \).
+- \( x_{n,5} \): número de abejas reinas en el año \( n \).
+
+La población en el año \( n+1 \) puede expresarse en términos de la población en el año \( n \) utilizando la matriz de transición \( A \) como:
+\[
+A = \begin{bmatrix} 0 & f_1 & f_2 & f_3 & f_4 \\ s_1 & 0 & 0 & 0 & 0 \\ 0 & s_2 & 0 & 0 & 0 \\ 0 & 0 & s_3 & 0 & 0 \\ 0 & 0 & 0 & s_4 & s_5 \end{bmatrix}
+\]
+
+Así, el sistema dinámico queda modelado por la ecuación:
+\[
+\mathbf{x}_{n+1} = A \mathbf{x}_n
+\]
+
+\section*{Objetivo}
+
+El entomólogo desea comprender la evolución de esta colonia a largo plazo para determinar:
+\begin{itemize}
+    \item La \textbf{tasa de crecimiento poblacional} a largo plazo de la colonia.
+    \item La \textbf{distribución estable} de la población entre los cinco roles en la colonia, si existe un equilibrio.
+    \item La \textbf{sensibilidad} de la tasa de crecimiento a las variaciones en las tasas de supervivencia y reproducción.
+\end{itemize}
+
+Para responder estas preguntas, es necesario calcular los **autovalores y autovectores** de la matriz de transición \( A \).
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) Encuentre los autovalores de la matriz \( A \) resolviendo el polinomio característico \(\text{det}(A - \lambda I) = 0\).
+
+    \item (b) Determine el autovalor dominante (el autovalor con el mayor valor absoluto), ya que este autovalor representa la \textbf{tasa de crecimiento} a largo plazo de la colonia.
+
+    \item (c) Encuentre el autovector correspondiente al autovalor dominante. Este autovector describe la \textbf{distribución estable} de la población entre los cinco roles en la colonia.
+
+    \item (d) Analice la estabilidad de la población: Dependiendo de si el autovalor dominante es mayor, menor o igual a 1, determine si la población total de la colonia crecerá, decrecerá o se estabilizará con el tiempo.
+
+    \item (e) Simulación de Ejemplo: Suponga que \( s_1 = 0.3 \), \( s_2 = 0.5 \), \( s_3 = 0.6 \), \( s_4 = 0.4 \), \( s_5 = 0.7 \), \( f_1 = 1.1 \), \( f_2 = 0.9 \), \( f_3 = 0.7 \), y \( f_4 = 1.0 \). Calcule los autovalores y autovectores para esta matriz y determine la tendencia a largo plazo de la población de la colonia con estos valores.
+\end{enumerate}
+
+\section*{Resolución}
+
+\begin{enumerate}
+    \item \textbf{Cálculo de los Autovalores}
+
+    Para encontrar los autovalores, planteamos la ecuación característica de \( A \):
+    \[
+    \text{det}(A - \lambda I) = 0
+    \]
+    Expandiendo el determinante, obtenemos un polinomio en \(\lambda\) cuya solución nos da los autovalores \(\lambda_1, \lambda_2, \dots, \lambda_5\).
+
+    \item \textbf{Identificación del Autovalor Dominante}
+
+    El autovalor de mayor valor absoluto, \(\lambda_{\text{dom}}\), representará la tasa de crecimiento a largo plazo de la colonia. Si \(\lambda_{\text{dom}} > 1\), la población crecerá; si \(\lambda_{\text{dom}} < 1\), la población decrecerá; y si \(\lambda_{\text{dom}} = 1\), la población se estabilizará.
+
+    \item \textbf{Cálculo del Autovector Estable}
+
+    El autovector asociado al autovalor dominante proporciona la \textbf{distribución estable} de la población en cada rol en la colonia. Este autovector se obtiene resolviendo el sistema \((A - \lambda_{\text{dom}} I) \mathbf{v} = 0\), donde \(\mathbf{v}\) es el autovector correspondiente a \(\lambda_{\text{dom}}\).
+
+    \item \textbf{Análisis de Estabilidad de la Población}
+
+    \begin{itemize}
+        \item Si \(\lambda_{\text{dom}} > 1\), la población de la colonia crecerá exponencialmente en el largo plazo.
+        \item Si \(\lambda_{\text{dom}} < 1\), la población tenderá a decrecer hacia cero.
+        \item Si \(\lambda_{\text{dom}} = 1\), la población alcanzará un estado estable, con una proporción fija entre los roles.
+    \end{itemize}
+
+    \item \textbf{Simulación de Ejemplo}
+
+    Con los valores específicos \( s_1 = 0.3 \), \( s_2 = 0.5 \), \( s_3 = 0.6 \), \( s_4 = 0.4 \), \( s_5 = 0.7 \), \( f_1 = 1.1 \), \( f_2 = 0.9 \), \( f_3 = 0.7 \), y \( f_4 = 1.0 \), la matriz de transición se convierte en:
+    \[
+    A = \begin{bmatrix} 0 & 1.1 & 0.9 & 0.7 & 1.0 \\ 0.3 & 0 & 0 & 0 & 0 \\ 0 & 0.5 & 0 & 0 & 0 \\ 0 & 0 & 0.6 & 0 & 0 \\ 0 & 0 & 0 & 0.4 & 0.7 \end{bmatrix}
+    \]
+    Usando estos valores, calcule los autovalores y determine el autovalor dominante y el autovector asociado. Interprete los resultados para analizar la tendencia a largo plazo y la proporción estable de la población entre los roles en la colonia.
+\end{enumerate}
+
+\end{document}

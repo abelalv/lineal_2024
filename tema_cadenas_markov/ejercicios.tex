@@ -1,0 +1,105 @@
+\documentclass{article}  % Define el tipo de documento (article, report, book, etc.)
+\usepackage[utf8]{inputenc}  % Permite usar caracteres especiales
+\usepackage{amsmath}  % Paquete para mejorar las capacidades matemáticas
+\usepackage{amssymb}  % Paquete para símbolos matemáticos adicionales
+
+\title{Título del Documento}  % Título del documento
+\author{Autor/a}  % Autor/a del documento
+\date{\today}  % Fecha; puedes poner una fecha específica o usar \today para la fecha actual
+
+\begin{document}
+
+\maketitle  % Genera el título
+
+
+
+
+
+\section*{Problema 1}
+
+En una región en desarrollo, un estudio de planificación social y de infraestructura, realizado por el departamento de ingeniería civil, ha determinado que la ocupación de los habitantes afecta directamente las necesidades de infraestructura y servicios públicos. Según este estudio, la ocupación de un niño, cuando alcance la adultez, depende de la ocupación de su padre, y las probabilidades de transición están representadas en la siguiente matriz de transición.
+
+Las ocupaciones consideradas son:
+\begin{itemize}
+    \item \textbf{P} = Profesional (requiere infraestructura avanzada, como oficinas y centros educativos).
+    \item \textbf{F} = Agricultor (requiere zonas rurales y acceso a tierras agrícolas).
+    \item \textbf{L} = Obrero (necesita zonas urbanas básicas, áreas de residencia industrial).
+    \item \textbf{C} = Comerciante (requiere mercados y centros comerciales).
+    \item \textbf{T} = Tecnólogo (necesita centros de innovación y tecnología).
+\end{itemize}
+
+La matriz de transición es la siguiente:
+
+\[
+P = 
+\begin{bmatrix}
+0.6 & 0.1 & 0.1 & 0.1 & 0.1 \\
+0.2 & 0.5 & 0.2 & 0.1 & 0.1 \\
+0.1 & 0.2 & 0.4 & 0.2 & 0.2 \\
+0.05 & 0.1 & 0.2 & 0.5 & 0.15 \\
+0.05 & 0.1 & 0.1 & 0.1 & 0.45 \\
+\end{bmatrix}
+\]
+
+Cada elemento \( a_{ij} \) representa la probabilidad de que un hijo de una persona con ocupación \( j \) tenga la ocupación \( i \) en su adultez. Por ejemplo, la probabilidad de que el hijo de un profesional también sea profesional es \(0.6\), mientras que la probabilidad de que el hijo de un tecnólogo también se dedique a la tecnología es \(0.45\).
+
+Este estudio es importante para prever las necesidades futuras de infraestructura en función de las ocupaciones, de modo que la región pueda planificar adecuadamente.
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item ¿Cuál es la probabilidad de que el nieto de un profesional también sea un profesional?
+
+    Esta pregunta es clave para analizar si la ocupación profesional será dominante en futuras generaciones, lo cual ayuda a decidir si se debe invertir en infraestructura avanzada, como universidades y oficinas.
+
+    \item ¿Cuál es la probabilidad de que el nieto de un tecnólogo también se dedique a la tecnología?
+
+    Esto indicará si la tecnología seguirá siendo una ocupación relevante, permitiendo prever la necesidad de centros de innovación tecnológica.
+
+    \item A largo plazo, ¿qué proporción de la población se dedicará a la agricultura?
+
+    Esta información es esencial para la planificación de zonas rurales y para satisfacer la demanda de alimentos locales.
+
+    \item ¿Cuál será la proporción a largo plazo de comerciantes en la población?
+
+    Saber esta proporción ayuda a anticipar la necesidad de infraestructura comercial, como mercados y áreas de venta.
+
+    \item ¿Qué proporción de la población estará dedicada a trabajos como obreros en el largo plazo?
+
+    Este dato es relevante para planificar zonas residenciales y servicios básicos en áreas industriales.
+\end{enumerate}
+
+\newpage
+
+\section*{Resolución}
+
+\begin{enumerate}
+    \item \textbf{Probabilidad de que el nieto de un profesional también sea un profesional:}
+    
+    Para obtener esta probabilidad, necesitamos calcular la probabilidad de transición en dos generaciones, es decir, encontrar el elemento \((P^2)_{11}\), donde \( P \) es la matriz de transición.
+
+    \item \textbf{Probabilidad de que el nieto de un tecnólogo también sea tecnólogo:}
+    
+    Necesitamos calcular el elemento \((P^2)_{55}\) de la matriz \(P^2\), que nos da la probabilidad de que un tecnólogo tenga un nieto tecnólogo.
+
+    \item \textbf{Proporciones a largo plazo de la población en cada ocupación:}
+    
+    Para encontrar la proporción a largo plazo en cada ocupación, debemos hallar el \textit{vector de estado estacionario} de la matriz \( P \), denotado como \( \pi \), que cumple con:
+    
+    \[
+    \pi \cdot P = \pi
+    \]
+    
+    y
+    
+    \[
+    \pi_1 + \pi_2 + \pi_3 + \pi_4 + \pi_5 = 1
+    \]
+
+    Cada componente de \( \pi \) representa la proporción de la población en cada ocupación a largo plazo. 
+\end{enumerate}
+
+Con esta información, los ingenieros civiles y planificadores podrán anticipar las necesidades de infraestructura y servicios adecuados para satisfacer la evolución ocupacional de la población en el largo plazo.
+
+
+\end{document}

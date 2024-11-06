@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Análisis de Conversión de Clientes en un Proceso de Marketing}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema}
+
+El departamento de marketing de una empresa de servicios envía periódicamente cartas promocionales a una extensa lista de clientes potenciales para invitarlos a suscribirse a un nuevo servicio de membresía premium. La lista de destinatarios incluye personas en distintos estados de compromiso con la empresa. Dependiendo de su interés y de la recepción de la carta, los clientes pueden moverse entre diferentes categorías, según el nivel de conversión que muestran:
+
+\begin{itemize}
+    \item **Clientes Activos (A)**: Ya están suscritos y tienden a renovar su membresía.
+    \item **Clientes de Alto Interés (B)**: Han mostrado interés previo, como visitas al sitio web o consultas.
+    \item **Clientes de Interés Medio (C)**: Son receptivos a las promociones, aunque su probabilidad de suscribirse es moderada.
+    \item **Clientes de Bajo Interés (D)**: Muestran poco interés en las promociones, aunque es posible que una parte de ellos se suscriba.
+    \item **Clientes Sin Interés (E)**: No responden a las campañas promocionales y tienen baja probabilidad de conversión.
+\end{itemize}
+
+Las transiciones entre estos estados de interés tras el envío de una carta se definen según la probabilidad de que los clientes de cada categoría pasen a otra o mantengan su estado actual:
+
+\begin{itemize}
+    \item Los **Clientes Activos** tienen un 80\% de probabilidad de renovar su membresía.
+    \item Los **Clientes de Alto Interés** tienen un 50\% de probabilidad de pasar a ser **Clientes Activos** y suscribirse, y un 20\% de quedarse en el mismo estado.
+    \item Los **Clientes de Interés Medio** tienen un 30\% de probabilidad de convertirse en **Clientes de Alto Interés** y un 10\% de pasar directamente a **Clientes Activos**.
+    \item Los **Clientes de Bajo Interés** tienen un 5\% de probabilidad de pasar a ser **Clientes de Interés Medio** y un 5\% de suscribirse.
+    \item Los **Clientes Sin Interés** tienen una probabilidad muy baja (1\%) de responder y suscribirse, permaneciendo en su mayoría sin cambios.
+\end{itemize}
+
+Estas probabilidades están resumidas en la matriz de transición \( P \), que refleja la probabilidad de cada cliente de permanecer en su estado actual o moverse a otro estado tras recibir una carta promocional.
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) Escriba la matriz de transición para este proceso de Markov.
+    
+    \item (b) Si en la última campaña, el 40\% de los destinatarios ordenaron una suscripción, ¿qué porcentaje de las personas que reciben la carta actual se espera que pidan una suscripción?
+
+    \item (c) Si se inicia una campaña mensual de envío de cartas, ¿cuál es la probabilidad de que un **Cliente de Interés Medio** (C) se convierta en **Cliente Activo** (A) en el tercer mes?
+
+    \item (d) ¿Cuál es la probabilidad de que un **Cliente Sin Interés** (E) termine en el estado de **Cliente Activo** (A) tras dos campañas consecutivas?
+
+    \item (e) A largo plazo, ¿qué proporción de la base de datos de clientes estará en cada estado?
+
+    \item (f) Suponga que cada cliente genera un ingreso de 100 USD cuando se convierte en **Cliente Activo**. Si la empresa tiene 10,000 clientes en su base de datos, ¿cuál sería el ingreso esperado en el largo plazo basado en el vector de estado estacionario?
+
+    \item (g) ¿Qué proporción de los **Clientes de Bajo Interés** (D) se espera que pasen al estado de **Cliente Activo** (A) después de cuatro campañas?
+
+    \item (h) Si el costo de enviar una carta es de 2 USD por cliente, ¿cuál es el costo-beneficio esperado a largo plazo de la campaña de marketing?
+
+    \item (i) ¿Cuántas campañas serían necesarias para que al menos el 50\% de los **Clientes de Interés Medio** (C) se conviertan en **Clientes Activos** (A)?
+\end{enumerate}
+
+\end{document}

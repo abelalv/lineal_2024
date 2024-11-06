@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Problema de Animación en 3D: Transformaciones Temporales con Autovalores y Autovectores}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema}
+
+Un equipo de animadores está trabajando en un proyecto en 3D que involucra la transformación de un objeto a lo largo del tiempo para simular efectos de rotación, expansión y cizallamiento. En esta animación, el objeto experimenta una serie de transformaciones que dependen del tiempo \( t \), permitiendo que la forma y orientación del objeto cambien en cada instante.
+
+El objeto en 3D está representado por un conjunto de puntos \(\mathbf{p_1}, \mathbf{p_2}, \dots, \mathbf{p_n}\) en el espacio tridimensional. Las transformaciones de escala, rotación y cizallamiento actúan sobre el objeto, y se representan mediante una matriz de transformación temporal \( T(t) \), que es función del tiempo \( t \).
+
+\subsection*{Transformaciones Dependientes del Tiempo}
+
+1. \textbf{Escalamiento}: La primera transformación es un escalamiento no uniforme que varía en el tiempo. La matriz de escala en función del tiempo es:
+   \[
+   S(t) = \begin{bmatrix} 1 + 0.5t & 0 & 0 \\ 0 & 1 + 0.3t & 0 \\ 0 & 0 & 1 - 0.2t \end{bmatrix}
+   \]
+   donde \( t \) es el tiempo en segundos. Esto significa que el objeto se expande en el eje \( x \), se estira en el eje \( y \), y se contrae en el eje \( z \) a medida que pasa el tiempo.
+
+2. \textbf{Rotación}: La segunda transformación rota el objeto en el eje \( z \) a una velocidad constante de \( 45^\circ \) por segundo. La matriz de rotación en el tiempo \( t \) es:
+   \[
+   R(t) = \begin{bmatrix} \cos(45^\circ t) & -\sin(45^\circ t) & 0 \\ \sin(45^\circ t) & \cos(45^\circ t) & 0 \\ 0 & 0 & 1 \end{bmatrix}
+   \]
+
+3. \textbf{Cizallamiento}: La tercera transformación aplica un cizallamiento en el eje \( y \) en función de la posición en el eje \( x \) y depende del tiempo. La matriz de cizallamiento es:
+   \[
+   C(t) = \begin{bmatrix} 1 & 0.2t & 0 \\ 0 & 1 & 0 \\ 0.1t & 0 & 1 \end{bmatrix}
+   \]
+
+La transformación total \( T(t) \) aplicada al objeto en cada instante \( t \) es la composición de estas tres transformaciones:
+\[
+T(t) = C(t) \cdot R(t) \cdot S(t)
+\]
+
+\section*{Objetivo}
+
+Para analizar cómo esta transformación dependiente del tiempo afecta al objeto en la animación, los animadores deben calcular:
+
+1. Las \textbf{direcciones principales} en las que el objeto se transforma y cómo estas cambian en función del tiempo.
+2. Los \textbf{factores de transformación} en esas direcciones principales, que dependen de los autovalores de \( T(t) \) para cada instante \( t \).
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) \textbf{Calcule la matriz de transformación total \( T(t) \)} en función del tiempo multiplicando \( S(t) \), \( R(t) \), y \( C(t) \) en el orden dado.
+
+    \item (b) \textbf{Calcule los autovalores de \( T(t) \) en función de \( t \)} para analizar cómo cambia el factor de escala en las direcciones principales con el tiempo.
+
+    \item (c) \textbf{Calcule los autovectores de \( T(t) \) en función de \( t \)} para identificar las direcciones principales a lo largo de las cuales actúan los factores de transformación en cada instante \( t \).
+
+    \item (d) \textbf{Interpretación temporal de los autovalores y autovectores}:
+        \begin{itemize}
+            \item ¿En qué direcciones se expandirá o contraerá el objeto con el tiempo?
+            \item ¿Cómo afectan los autovalores en función de \( t \) a la transformación en cada dirección?
+        \end{itemize}
+
+    \item (e) \textbf{Aplicación de \( T(t) \) a los Puntos Originales}: Si los puntos originales del objeto son dados por
+    \[
+    \mathbf{p_1} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \quad \mathbf{p_2} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \quad \mathbf{p_3} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+    \]
+    aplique \( T(t) \) a estos puntos para \( t = 1 \) segundo, \( t = 2 \) segundos, y \( t = 3 \) segundos y determine sus nuevas posiciones.
+
+    \item (f) \textbf{Evolución en la Animación con el Tiempo}: Si la transformación \( T(t) \) se aplica continuamente en cada cuadro de la animación, analice cómo el objeto se comportará a lo largo del tiempo. Utilice los autovalores y autovectores en función de \( t \) para predecir el comportamiento a largo plazo en la animación:
+    \begin{itemize}
+        \item ¿El objeto se expandirá indefinidamente en alguna dirección?
+        \item ¿En qué dirección (o direcciones) se contraerá?
+        \item ¿Cómo cambia la rotación en función del tiempo y cómo afecta a la orientación general del objeto?
+    \end{itemize}
+\end{enumerate}
+
+
+\end{document}

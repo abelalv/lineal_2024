@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Análisis de Selección de Mezclas de Cemento en Proyectos de Construcción}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema}
+
+Un equipo de ingenieros de materiales está evaluando distintas combinaciones de mezclas de cemento para optimizar la resistencia y durabilidad de las estructuras de construcción. A partir de pruebas en diversos proyectos, se han identificado cinco tipos principales de mezclas, cada una con diferentes probabilidades de ser reutilizada o cambiada en función de su desempeño.
+
+Cada mezcla tiene propiedades específicas que la hacen adecuada para diferentes tipos de proyectos, y los ingenieros analizan la probabilidad de transición de una mezcla a otra dependiendo de la eficacia observada en proyectos previos.
+
+Las mezclas principales consideradas son:
+\begin{itemize}
+    \item \textbf{Mezcla Alta Resistencia (A)}: Se utiliza principalmente en estructuras de carga, como columnas y muros de carga.
+    \item \textbf{Mezcla Resistente a la Compresión (B)}: Ideal para pavimentos y losas de concreto expuestas a compresión.
+    \item \textbf{Mezcla Impermeable (C)}: Usada en construcciones que requieren protección contra la humedad, como cimientos y sótanos.
+    \item \textbf{Mezcla de Secado Rápido (D)}: Común en proyectos que requieren un fraguado rápido, como reparaciones de emergencia.
+    \item \textbf{Mezcla Ecológica (E)}: Una mezcla que incorpora materiales reciclados y es ideal para proyectos sostenibles y ecológicos.
+\end{itemize}
+
+Las probabilidades de transición entre estas mezclas, al observar el desempeño de un proyecto terminado, son las siguientes:
+\begin{itemize}
+    \item La \textbf{Mezcla Alta Resistencia} tiene un 80\% de probabilidad de ser elegida nuevamente para un proyecto similar.
+    \item La \textbf{Mezcla Resistente a la Compresión} tiene un 50\% de probabilidad de ser reutilizada y un 30\% de ser reemplazada por la \textbf{Mezcla Alta Resistencia} en proyectos con mayores cargas.
+    \item La \textbf{Mezcla Impermeable} tiene un 60\% de probabilidad de mantenerse en proyectos de protección contra la humedad y un 20\% de ser sustituida por la \textbf{Mezcla de Secado Rápido} en proyectos de emergencia.
+    \item La \textbf{Mezcla de Secado Rápido} tiene un 70\% de probabilidad de ser usada nuevamente en proyectos de fraguado rápido y un 10\% de probabilidad de cambiar a la \textbf{Mezcla Alta Resistencia} si se necesitan propiedades de soporte.
+    \item La \textbf{Mezcla Ecológica} tiene un 90\% de probabilidad de mantenerse en proyectos sostenibles, y un 5\% de ser sustituida por la \textbf{Mezcla Resistente a la Compresión} en caso de requerir mayor resistencia estructural.
+\end{itemize}
+
+Estas probabilidades están representadas en la matriz de transición \( P \), que describe la probabilidad de elegir la misma mezcla o una diferente en el próximo proyecto.
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) Escriba la matriz de transición para este proceso de Markov.
+    
+    \item (b) Si al inicio de un nuevo proyecto el 40\% de las mezclas seleccionadas son de \textbf{Mezcla Alta Resistencia}, ¿qué porcentaje de las mezclas se espera que sean de \textbf{Mezcla Alta Resistencia} en el siguiente proyecto?
+
+    \item (c) Si se utilizan las mezclas en tres proyectos sucesivos, ¿cuál es la probabilidad de que la \textbf{Mezcla Resistente a la Compresión} se utilice en el tercer proyecto?
+
+    \item (d) ¿Cuál es la probabilidad de que, después de dos proyectos, se utilice la \textbf{Mezcla Impermeable} en un proyecto de cimientos o sótanos?
+
+    \item (e) A largo plazo, ¿qué proporción de los proyectos utilizará cada tipo de mezcla?
+
+    \item (f) Si cada proyecto tiene un costo de 10,000 USD y los proyectos que usan \textbf{Mezcla Alta Resistencia} generan un 20\% más de ingresos, ¿cuál sería el ingreso esperado a largo plazo basado en el vector de estado estacionario?
+
+    \item (g) ¿Qué proporción de los proyectos que comenzaron con \textbf{Mezcla de Secado Rápido} se espera que cambien a \textbf{Mezcla Alta Resistencia} después de cuatro proyectos?
+
+    \item (h) Si cada cambio de mezcla tiene un costo adicional de 1,000 USD, ¿cuál es el costo esperado de los cambios en el largo plazo?
+
+    \item (i) ¿Cuántos proyectos serían necesarios para que al menos el 50\% de los proyectos que comenzaron con la \textbf{Mezcla Impermeable} terminen utilizando la \textbf{Mezcla Alta Resistencia}?
+\end{enumerate}
+
+
+\end{document}

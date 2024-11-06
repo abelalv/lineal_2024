@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Dinámica de Población en una Comunidad con Cinco Grupos de Edad}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problema: Dinámica de Población en una Comunidad con Cinco Grupos de Edad}
+
+Un ecólogo está investigando la dinámica de población de una especie animal dividida en cinco grupos de edad: **juveniles**, **subadultos jóvenes**, **subadultos mayores**, **adultos jóvenes** y **adultos maduros**. Cada grupo de edad tiene diferentes probabilidades de supervivencia y reproducción. El objetivo es modelar cómo cambia la población en cada grupo de edad de un año a otro y entender el comportamiento a largo plazo.
+
+Definimos las siguientes variables:
+
+- **Supervivencia**:
+  \begin{itemize}
+      \item \( s_1 \): probabilidad de que los juveniles sobrevivan y pasen a ser subadultos jóvenes en el próximo año.
+      \item \( s_2 \): probabilidad de que los subadultos jóvenes sobrevivan y pasen a ser subadultos mayores.
+      \item \( s_3 \): probabilidad de que los subadultos mayores sobrevivan y pasen a ser adultos jóvenes.
+      \item \( s_4 \): probabilidad de que los adultos jóvenes sobrevivan y pasen a ser adultos maduros.
+      \item \( s_5 \): probabilidad de que los adultos maduros sobrevivan en el próximo año y permanezcan en el mismo grupo.
+  \end{itemize}
+
+- **Reproducción**:
+  \begin{itemize}
+      \item \( f_1 \): número de juveniles producidos por cada subadulto mayor.
+      \item \( f_2 \): número de juveniles producidos por cada adulto joven.
+      \item \( f_3 \): número de juveniles producidos por cada adulto maduro.
+  \end{itemize}
+
+\section*{Modelo Matricial}
+
+Denotemos por \( \mathbf{x}_n = \begin{bmatrix} x_{n,1} & x_{n,2} & x_{n,3} & x_{n,4} & x_{n,5} \end{bmatrix}^T \) el vector de población en el año \( n \), donde:
+- \( x_{n,1} \): número de juveniles en el año \( n \).
+- \( x_{n,2} \): número de subadultos jóvenes en el año \( n \).
+- \( x_{n,3} \): número de subadultos mayores en el año \( n \).
+- \( x_{n,4} \): número de adultos jóvenes en el año \( n \).
+- \( x_{n,5} \): número de adultos maduros en el año \( n \).
+
+La población en el año \( n+1 \) se puede expresar en términos de la población en el año \( n \) usando la siguiente matriz de transición \( A \):
+\[
+A = \begin{bmatrix} 0 & f_1 & f_2 & f_3 & f_3 \\ s_1 & 0 & 0 & 0 & 0 \\ 0 & s_2 & 0 & 0 & 0 \\ 0 & 0 & s_3 & 0 & 0 \\ 0 & 0 & 0 & s_4 & s_5 \end{bmatrix}
+\]
+
+De esta forma, el sistema dinámico queda modelado por:
+\[
+\mathbf{x}_{n+1} = A \mathbf{x}_n
+\]
+
+\section*{Objetivo}
+
+Para entender la evolución de esta población a largo plazo, el ecólogo desea determinar:
+\begin{itemize}
+    \item La \textbf{tasa de crecimiento poblacional} a largo plazo.
+    \item La \textbf{distribución estable} de la población entre los cinco grupos de edad si existe un equilibrio.
+    \item La \textbf{sensibilidad} de la tasa de crecimiento a las variaciones en las tasas de supervivencia y reproducción.
+\end{itemize}
+
+Para lograr estos objetivos, es necesario calcular los **autovalores y autovectores** de la matriz de transición \( A \).
+
+\section*{Preguntas}
+
+\begin{enumerate}
+    \item (a) Encuentre los autovalores de la matriz \( A \) resolviendo el polinomio característico \(\text{det}(A - \lambda I) = 0\).
+
+    \item (b) Determine el autovalor dominante (el autovalor con el mayor valor absoluto), ya que este autovalor representa la \textbf{tasa de crecimiento} a largo plazo de la población.
+
+    \item (c) Encuentre el autovector correspondiente al autovalor dominante. Este autovector describe la \textbf{distribución estable} de la población entre los cinco grupos de edad.
+
+    \item (d) Analice la estabilidad de la población: Dependiendo de si el autovalor dominante es mayor, menor o igual a 1, determine si la población total crecerá, decrecerá o se estabilizará con el tiempo.
+
+    \item (e) Simulación de Ejemplo: Suponga que \( s_1 = 0.4 \), \( s_2 = 0.5 \), \( s_3 = 0.6 \), \( s_4 = 0.7 \), \( s_5 = 0.8 \), \( f_1 = 1.2 \), \( f_2 = 1.0 \), y \( f_3 = 0.8 \). Calcule los autovalores y autovectores para esta matriz y determine la tendencia a largo plazo de la población con estos valores.
+\end{enumerate}
+
+\end{document}
